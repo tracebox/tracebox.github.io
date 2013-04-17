@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Tracebox : A Middlebox Detection Tool" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Tracebox</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tracebox">View on GitHub</a>
+
+          <h1 id="project_title">Tracebox</h1>
+          <h2 id="project_tagline">A Middlebox Detection Tool</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Tracebox -- Middlebox Detection Tool</h3>
+
+<p>Middleboxes are widely deployed on the Internet mostly at the edge of the
+network, in enterprise and home networks. Middleboxes plays therefore an
+important role -- even if they are often criticized -- in today's Internet.
+Unfortunately, the widespread of middlebox contributed to the ossification of
+the Internet making it very difficult to innovate. As an example, Multipath
+TCP, a recent extension to TCP, includes a complex mechanism which
+constitute the major part of the protocol to deal with those middleboxes.</p>
+
+<p>Middleboxes manipulates traffic for purposes other than simple packet
+forwarding and often transparently to the end-user (e.g. NAT, transparent
+proxies, DPI, etc.). Detecting such middleboxes is difficult today. </p>
+
+<p>Tracebox a tool that allows to detect middleboxes on
+any paths, i.e., between a source and any destination. Tracebox can be viewed
+as a tool similar to traceroute as it uses ICMP replies to identify changes in
+the packets. The fact that tracebox is able to detect middleboxes comes from
+the observation that ICMP messages are often not as defined in
+RFC792. Indeed it is quite common to receive a ICMP
+Time-to-Live exceeded message with the original datagram instead of 64
+bits as described in the standard. This is caused by operating systems
+configured to reply with full ICMP (e.g., Linux, Cisco IOS-XR, etc.) as well as
+the ICMP Multi-Part Messages extension that standardize the fact
+that routers using MPLS tunnels replies and ICMP message containing the full
+datagram.</p>
+
+<h3>Install</h3>
+
+<p>Source can be found <a href="http://www.github.com/gdetal/tracebox">http://www.github.com/gdetal/tracebox</a>.</p>
+
+<p>Tracebox requires:</p>
+
+<ul>
+<li>The development package of libpcap, libdnet and python.</li>
+<li>Automake, autoconf and libtool.</li>
+<li>Python packages: argparse (for python &lt; 2.7), pcapy and scapy.</li>
+</ul><p>To build Tracebox:</p>
+
+<pre><code>$ ./bootstrap.sh
+$ make
+$ sudo make install
+</code></pre>
+
+<p>Additionally python wrapper can be disabled with: --disable-wrappers</p>
+
+<h3>Usage</h3>
+
+<p>There are two possible ways to use tracebox either with the python scripts (see some samples scripts in  /tracebox/examples) or with the default binary. The later only send one TCP probe and look for changes in the path. The following example shows that the first router on the path changes the TCP sequence number:</p>
+
+<pre><code>$ sudo tracebox -i en0 87.98.252.243
+tracebox to 87.98.252.243 (87.98.252.243): 30 hops max
+ 1: 130.104.228.126 (130.104.228.126) [TCP seq changed] 
+ 2: ctpythagore.sri.ucl.ac.be (130.104.254.229) 
+ 3: ge.cr2.brueve.belnet.net (193.191.3.85) 
+ 4: ovh.bnix.net (194.53.172.70) 
+ 5: rbx-g1-a9.fr.eu (213.251.130.61) 
+ 6: vss-4-6k.fr.eu (94.23.122.160) 
+ 7: 87-98-252-243.kimsufi.com (87.98.252.243) 
+</code></pre>
+
+<h3>Support or Contact</h3>
+
+<p>Feedback or comments are welcome <a href="https://github.com/gdetal" class="user-mention">@gdetal</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
