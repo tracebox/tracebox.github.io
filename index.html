@@ -27,7 +27,8 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Tracebox</h3>
+        <h3>
+<a name="tracebox" class="anchor" href="#tracebox"><span class="octicon octicon-link"></span></a>Tracebox</h3>
 
 <p>Middleboxes are widely deployed on the Internet mostly at the edge of the
 network, in enterprise and home networks. Middleboxes plays therefore an
@@ -54,16 +55,16 @@ the ICMP Multi-Part Messages extension that standardize the fact
 that routers using MPLS tunnels replies and ICMP message containing the full
 datagram.</p>
 
-<h3>Install</h3>
+<h3>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h3>
 
-<p>Source can be found <a href="http://www.github.com/gdetal/tracebox">http://www.github.com/gdetal/tracebox</a>.</p>
+<p>Source can be found <a href="http://www.github.com/tracebox/tracebox">http://www.github.com/tracebox/tracebox</a>.</p>
 
 <p>Tracebox requires:</p>
 
 <ul>
-<li>The development package of libpcap, libdnet and python.</li>
+<li>The development package of libpcap, (lib)lua &gt;= 5.1.</li>
 <li>Automake, autoconf and libtool.</li>
-<li>Python packages: argparse (for python &lt; 2.7), pcapy and scapy.</li>
 </ul><p>To build Tracebox:</p>
 
 <pre><code>$ ./bootstrap.sh
@@ -73,26 +74,32 @@ $ sudo make install
 
 <p>Additionally python wrapper can be disabled with: --disable-wrappers</p>
 
-<h3>Usage</h3>
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>There are two possible ways to use tracebox either with the python scripts (see some samples scripts in  /tracebox/examples) or with the default binary. The later only send one TCP probe and look for changes in the path. The following example shows that the first router on the path changes the TCP sequence number:</p>
+<p>There are two possible ways to use tracebox either with the python scripts (see some samples scripts in  /tracebox/examples) or with the default binary. The later only send one TCP probe and look for changes in the path. The following example sends a TCP SYN probe (to port 80 by default) with the TCP Maximum Segment Size, Multipath TCP and Window Scale options. The output shows that a middlebox close to the server removes the last two options and change the MSS value.</p>
 
-<pre><code>$ sudo tracebox -i en0 87.98.252.243
-tracebox to 87.98.252.243 (87.98.252.243): 30 hops max
- 1: 130.104.228.126 (130.104.228.126) [TCP seq changed] 
- 2: ctpythagore.sri.ucl.ac.be (130.104.254.229) 
- 3: ge.cr2.brueve.belnet.net (193.191.3.85) 
- 4: ovh.bnix.net (194.53.172.70) 
- 5: rbx-g1-a9.fr.eu (213.251.130.61) 
- 6: vss-4-6k.fr.eu (94.23.122.160) 
- 7: 87-98-252-243.kimsufi.com (87.98.252.243) 
+<pre><code># tracebox -n -p IP/TCP/MSS/MPCAPABLE/WSCALE bahn.de
+tracebox to 81.200.198.6 (bahn.de): 64 hops max
+1: 130.104.228.126 IP::CheckSum 
+2: 130.104.254.229 IP::TTL IP::CheckSum 
+3: 193.191.3.85 IP::TTL IP::CheckSum 
+4: 193.191.16.21 IP::TTL IP::CheckSum 
+5: 195.69.144.123 IP::TTL IP::CheckSum 
+6: 145.254.5.158 IP::TTL IP::CheckSum 
+7: 88.79.13.62 IP::TTL IP::CheckSum 
+8: 81.200.194.234 IP::TTL IP::CheckSum 
+9: 81.200.197.9 IP::TTL IP::CheckSum 
+10: 81.200.198.6 TCP::CheckSum IP::TTL IP::CheckSum TCPOptionMaxSegSize::MaxSegSize -TCPOptionMPTCPCapable -TCPOptionWindowScale
 </code></pre>
 
-<h3>Support or Contact</h3>
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Feedback or comments are welcome <a href="https://github.com/gdetal" class="user-mention">@gdetal</a></p>
 
-<h3>Acknowledgment</h3>
+<h3>
+<a name="acknowledgment" class="anchor" href="#acknowledgment"><span class="octicon octicon-link"></span></a>Acknowledgment</h3>
 
 <p>This work has been partially funded by the FP7 EU project <a href="http://www.change-project.eu/">CHANGE</a> and <a href="http://www.ict-mplane.eu/">mPlane</a>.</p>
       </section>
