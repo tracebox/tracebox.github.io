@@ -42,7 +42,7 @@ constitute the major part of the protocol to deal with those middleboxes.</p>
 forwarding and often transparently to the end-user (e.g. NAT, transparent
 proxies, DPI, etc.). Detecting such middleboxes is difficult today. </p>
 
-<p>Tracebox a tool that allows to detect middleboxes on
+<p>Tracebox is a tool that allows to detect middleboxes on
 any paths, i.e., between a source and any destination. Tracebox can be viewed
 as a tool similar to traceroute as it uses ICMP replies to identify changes in
 the packets. The fact that tracebox is able to detect middleboxes comes from
@@ -61,7 +61,9 @@ Gregory Detal, Benjamin Hesmans, Olivier Bonaventure, Yves Vanaubel and Benoit D
 <h3>
 <a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h3>
 
-<p>Source can be found <a href="http://www.github.com/tracebox/tracebox">http://www.github.com/tracebox/tracebox</a>.</p>
+<p>Tracebox is available on Mac OS X using <a href="http://brew.sh">Homebrew</a> with <code>brew install tracebox</code>.</p>
+
+<p>Source can be found at <a href="http://www.github.com/tracebox/tracebox">http://www.github.com/tracebox/tracebox</a>.</p>
 
 <p>Tracebox requires:</p>
 
@@ -74,8 +76,6 @@ Gregory Detal, Benjamin Hesmans, Olivier Bonaventure, Yves Vanaubel and Benoit D
 $ make
 $ sudo make install
 </code></pre>
-
-<p>Additionally python wrapper can be disabled with: --disable-wrappers</p>
 
 <h3>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
