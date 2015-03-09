@@ -3,7 +3,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>Reference</title>
+    <title>Lua bindings for Tracebox</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -63,7 +63,9 @@
 
 <h1>Class <code>IPv6SegmentRoutingHeader</code></h1>
 <p>The IPv6SegmentRoutingHeader Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
-<p></p>
+<p>
+
+</p>
 
 
 <h2><a href="#Tables">Tables</a></h2>
@@ -90,6 +92,22 @@
 	<tr>
 	<td class="name" nowrap><a href="#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new ([args])</a></td>
 	<td class="summary">Constructor for an IPv6SegmentRoutingHeader Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6SegmentRoutingHeader:segmentleft">IPv6SegmentRoutingHeader:segmentleft ()</a></td>
+	<td class="summary">Set the number of segment left to be processed in the segment list</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6SegmentRoutingHeader:cflag">IPv6SegmentRoutingHeader:cflag ()</a></td>
+	<td class="summary">Set the cleanup flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6SegmentRoutingHeader:pflag">IPv6SegmentRoutingHeader:pflag ()</a></td>
+	<td class="summary">Set the protected flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6SegmentRoutingHeader:hmackey">IPv6SegmentRoutingHeader:hmackey ()</a></td>
+	<td class="summary">Set the hmac key</td>
 	</tr>
 </table>
 
@@ -166,6 +184,14 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> srh:setsegments{
+   <span class="string">'2001:db8:1234::1'</span>,
+   <span class="string">'2001:db8:5678::1'</span>,
+   <span class="string">'2001:db8:9abc::1'</span>
+ }</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -187,6 +213,13 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> srh:setpolicies{
+   {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_destination, value=<span class="string">'2001:db8::1'</span>},
+   {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_source, value=<span class="string">'2001:db8::2'</span>},
+ }</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -208,6 +241,10 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">srh:sethmac{<span class="number">0x1</span>, <span class="number">0x2</span>, <span class="number">0x3</span>, <span class="number">0x4</span>, ...}</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -245,6 +282,62 @@
    hmac={ <span class="number">0xe</span>, <span class="number">0xa</span>, <span class="number">0x12</span> } <span class="comment">-- will be 0-padded
 </span> }</pre>
     </ul>
+
+</dd>
+    <dt>
+    <a name = "IPv6SegmentRoutingHeader:segmentleft"></a>
+    <strong>IPv6SegmentRoutingHeader:segmentleft ()</strong>
+    </dt>
+    <dd>
+    Set the number of segment left to be processed in the segment list
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6SegmentRoutingHeader:cflag"></a>
+    <strong>IPv6SegmentRoutingHeader:cflag ()</strong>
+    </dt>
+    <dd>
+    Set the cleanup flag
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6SegmentRoutingHeader:pflag"></a>
+    <strong>IPv6SegmentRoutingHeader:pflag ()</strong>
+    </dt>
+    <dd>
+    Set the protected flag
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6SegmentRoutingHeader:hmackey"></a>
+    <strong>IPv6SegmentRoutingHeader:hmackey ()</strong>
+    </dt>
+    <dd>
+    Set the hmac key
+
+
+
+
+
+
 
 </dd>
 </dl>

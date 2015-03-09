@@ -3,7 +3,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>Reference</title>
+    <title>Lua bindings for Tracebox</title>
     <link rel="stylesheet" href="ldoc.css" type="text/css" />
 </head>
 <body>
@@ -54,7 +54,35 @@
 <div id="content">
 
 
-  <h2>Lua bindings for TraceBox</h2>
+  <h2>
+<h1>Tracebox, a middlebox detection tool</h1>
+<h2>Basic use of the Lua API</h2>
+<p>When run, the scripts have preset global variables and functoin, listed in <a href="modules/Globals.html#">Globals</a>.
+The most basic script is made of 3 parts:</p>
+
+<ol>
+    <li><p>Probe packet definition, using successive concatenation of packet layers, see <a href="modules/Globals.html#">Globals</a>.</p>
+
+<pre><code>pkt = ip{dst='185.31.18.133'} / tcp{dst=80} / raw('GET /index.html HTTP/1.1\r\n')
+</code></pre></li>
+    <li><p>Callback function definition, which will be called after each probe packet has been echoed back by intermediate routers on the path, see <a href="modules/Globals.html#tracebox_callback">Globals:tracebox_callback</a>.</p>
+
+<pre><code>function cb(ttl, r_ip, probe, rcv, mod)
+    print('At hop ' .. ttl)
+    print('Received: ' .. tostring(rcv))
+end
+</code></pre></li>
+    <li><p>tracebox() function call, see <a href="modules/Globals.html#tracebox">Globals:tracebox</a>, with the created probe packet and callback function, which will run tracebox and call the callback with the detected packet modifications and return the final received packet received from the target, if any.</p>
+
+<pre><code>result = tracebox(pkt, {callback='cb'})
+print(tostring(result))
+</code></pre></li>
+</ol>
+
+<h2>Extending the LUA API</h2>
+<p>TBD</p>
+
+</h2>
 
 <h2>Modules</h2>
 <table class="module_list">

@@ -3,7 +3,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>Reference</title>
+    <title>Lua bindings for Tracebox</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -39,7 +39,6 @@
 <li><a href="#IPv6">IPv6</a></li>
 <li><a href="#TCP">TCP</a></li>
 <li><a href="#UDP">UDP</a></li>
-<li><a href="#lua_tracebox_Functions">lua_tracebox Functions</a></li>
 </ul>
 
 
@@ -69,16 +68,9 @@
 
 <h1>Module <code>Globals</code></h1>
 <p>Global functions and objects provided by TraceBox</p>
-<p></p>
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">
-   pkt = IP / TCP{dst=80}
-   function cb(ttl, r_ip, probe, rcv, mod)
-	   print(r_ip .. &apos; is at a distance of &apos; .. ttl .. &apos;hops&apos;)
-   end
-   tracebox(pkt, {&apos;callback&apos; = cb})</pre>
-    </ul>
+<p>
+
+</p>
 
 
 <h2><a href="#Functions">Functions</a></h2>
@@ -86,6 +78,15 @@
 	<tr>
 	<td class="name" nowrap><a href="#filter">filter (pkt)</a></td>
 	<td class="summary">Create a firewall rule to open ports on the host machine.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tracebox_callback">tracebox_callback (ttl, r_ip, probe, rcv, mod)</a></td>
+	<td class="summary">Callback function type, to be provided as argument to tracebox</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tracebox">tracebox (pkt[, args])</a></td>
+	<td class="summary">Start sending the packet with increasing TTL values and compute the
+ differences</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#filter">filter (pkt)</a></td>
@@ -486,18 +487,6 @@
 	<td class="summary">A default UDP layer whose destination port is 53</td>
 	</tr>
 </table>
-<h2><a href="#lua_tracebox_Functions">lua_tracebox Functions</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#tracebox_callback">tracebox_callback (ttl, r_ip, probe, rcv, mod)</a></td>
-	<td class="summary">Callback function type, to be provided as argument to tracebox</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#tracebox">tracebox (pkt[, args])</a></td>
-	<td class="summary">Start sending the packet with increasing TTL values and compute the
- differences</td>
-	</tr>
-</table>
 
 <br/>
 <br/>
@@ -525,8 +514,11 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/FWFilter.html#">FWFilter</a></span>
-        the firewall object that will open the source
- 	and destination ports found in the TCP/UDP layer of the packet
+
+<p>the firewall object that will open the source</p>
+<pre><code>and destination ports found in the TCP/UDP layer of the packet
+</code></pre>
+
     </ol>
 
 
@@ -534,6 +526,101 @@
     <h3>Usage:</h3>
     <ul>
         <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "tracebox_callback"></a>
+    <strong>tracebox_callback (ttl, r_ip, probe, rcv, mod)</strong>
+    </dt>
+    <dd>
+    Callback function type, to be provided as argument to tracebox
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ttl</span>
+            <span class="types"><span class="type">num</span></span>
+         the current TTL value
+        </li>
+        <li><span class="parameter">r_ip</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the ip of the router that echoed the probe
+        </li>
+        <li><span class="parameter">probe</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the probe packet
+        </li>
+        <li><span class="parameter">rcv</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the echoed packet
+        </li>
+        <li><span class="parameter">mod</span>
+            <span class="types"><span class="type">PacketModifications</span></span>
+         the packet modifications list
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        1 to force tracebox to stop sending probes
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Globals.html#tracebox">tracebox</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">function</span> callback_func(ttl, r_ip, probe, rcv, mod)
+ 	<span class="global">print</span>(<span class="string">"Sent probe n#"</span> .. tll)
+ <span class="keyword">end</span>
+ </pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "tracebox"></a>
+    <strong>tracebox (pkt[, args])</strong>
+    </dt>
+    <dd>
+    Start sending the packet with increasing TTL values and compute the
+ differences
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkt</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the probe packet
+        </li>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a table with the name of a callback function at key 'callback'
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+        the echoed packet from the destination or nil
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Globals.html#tracebox_callback">tracebox_callback</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">tracebox(IP/TCP, { callback = <span class="string">'callback_func'</span>})</pre>
     </ul>
 
 </dd>
@@ -557,8 +644,11 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/FWFilter.html#">FWFilter</a></span>
-        the firewall object that will open the source
- 	and destination ports found in the TCP/UDP layer of the packet
+
+<p>the firewall object that will open the source</p>
+<pre><code>and destination ports found in the TCP/UDP layer of the packet
+</code></pre>
+
     </ol>
 
 
@@ -1348,6 +1438,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1371,6 +1463,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1403,6 +1497,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1433,6 +1529,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1465,6 +1563,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1495,6 +1595,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1563,6 +1665,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1594,6 +1698,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1624,6 +1730,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1667,6 +1775,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1690,6 +1800,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1722,6 +1834,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1752,6 +1866,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1784,6 +1900,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1814,6 +1932,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1882,6 +2002,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1913,6 +2035,8 @@
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
 
+
+
     </ol>
 
 
@@ -1943,6 +2067,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+
 
     </ol>
 
@@ -1996,6 +2122,8 @@
 
            <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
 
+
+
     </ol>
 
 
@@ -2045,6 +2173,8 @@
 
            <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
 
+
+
     </ol>
 
 
@@ -2090,6 +2220,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2114,6 +2246,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2137,6 +2271,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2169,6 +2305,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2200,6 +2338,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2223,6 +2363,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2230,6 +2372,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2262,6 +2406,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2285,6 +2431,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2292,6 +2440,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2316,6 +2466,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2323,6 +2475,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2444,6 +2598,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2541,6 +2697,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2565,6 +2723,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2588,6 +2748,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2620,6 +2782,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2651,6 +2815,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2674,6 +2840,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2681,6 +2849,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2713,6 +2883,8 @@
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
 
+
+
     </ol>
 
 
@@ -2736,6 +2908,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2743,6 +2917,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2767,6 +2943,8 @@
         <li><span class="parameter">arg</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+
+
         </li>
     </ul>
 
@@ -2774,6 +2952,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2895,6 +3075,8 @@
     <ol>
 
            <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
 
     </ol>
 
@@ -2997,104 +3179,6 @@
          <a href="../classes/UDP.html#">UDP</a>
     </ul>
 
-
-</dd>
-</dl>
-    <h2><a name="lua_tracebox_Functions"></a>lua_tracebox Functions</h2>
-    <dl class="function">
-    <dt>
-    <a name = "tracebox_callback"></a>
-    <strong>tracebox_callback (ttl, r_ip, probe, rcv, mod)</strong>
-    </dt>
-    <dd>
-    Callback function type, to be provided as argument to tracebox
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">ttl</span>
-            <span class="types"><span class="type">num</span></span>
-         the current TTL value
-        </li>
-        <li><span class="parameter">r_ip</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-         the ip of the router that echoed the probe
-        </li>
-        <li><span class="parameter">probe</span>
-            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-         the probe packet
-        </li>
-        <li><span class="parameter">rcv</span>
-            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-         the echoed packet
-        </li>
-        <li><span class="parameter">mod</span>
-            <span class="types"><span class="type">PacketModifications</span></span>
-         the packet modifications list
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">num</span></span>
-        1 to force tracebox to stop sending probes
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/Globals.html#tracebox">tracebox</a>
-    </ul>
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">
- <span class="keyword">function</span> callback_func(ttl, r_ip, probe, rcv, mod)
- 	<span class="global">print</span>(<span class="string">"Sent probe n#"</span> .. tll)
- <span class="keyword">end</span>
- </pre>
-    </ul>
-
-</dd>
-    <dt>
-    <a name = "tracebox"></a>
-    <strong>tracebox (pkt[, args])</strong>
-    </dt>
-    <dd>
-    Start sending the packet with increasing TTL values and compute the
- differences
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">pkt</span>
-            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-         the probe packet
-        </li>
-        <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-         a table with a callback function at key 'callback'
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-        the echoed packet from the destination or nil
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/Globals.html#tracebox_callback">tracebox_callback</a>
-    </ul>
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">tracebox(IP/TCP, { <span class="string">'callback'</span> = callback_func})</pre>
-    </ul>
 
 </dd>
 </dl>
