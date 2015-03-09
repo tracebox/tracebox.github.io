@@ -1,0 +1,3110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Layers">Layers</a></li>
+<li><a href="#ICMP">ICMP</a></li>
+<li><a href="#IP">IP</a></li>
+<li><a href="#IPv6">IPv6</a></li>
+<li><a href="#TCP">TCP</a></li>
+<li><a href="#UDP">UDP</a></li>
+<li><a href="#lua_tracebox_Functions">lua_tracebox Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>Globals</strong></li>
+</ul>
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>Globals</code></h1>
+<p>Global functions and objects provided by TraceBox</p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+   pkt = IP / TCP{dst=80}
+   function cb(ttl, r_ip, probe, rcv, mod)
+	   print(r_ip .. &apos; is at a distance of &apos; .. ttl .. &apos;hops&apos;)
+   end
+   tracebox(pkt, {&apos;callback&apos; = cb})</pre>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#filter">filter (pkt)</a></td>
+	<td class="summary">Create a firewall rule to open ports on the host machine.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#filter">filter (pkt)</a></td>
+	<td class="summary">Create a firewall rule to open ports on the host machine.</td>
+	</tr>
+</table>
+<h2><a href="#Layers">Layers</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#raw">raw ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/Raw.html#Raw:new">Raw:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#icmp">icmp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip">ip ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IP.html#IP:new">IP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ipv6">ipv6 ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#srh">srh ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tcp">tcp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/TCP.html#TCP:new">TCP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#udp">udp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/UDP.html#UDP:new">UDP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#raw">raw ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/Raw.html#Raw:new">Raw:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#icmp">icmp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip">ip ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IP.html#IP:new">IP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ipv6">ipv6 ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#srh">srh ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tcp">tcp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/TCP.html#TCP:new">TCP:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#udp">udp ([args])</a></td>
+	<td class="summary">Shorthand for <a href="../classes/UDP.html#UDP:new">UDP:new</a></td>
+	</tr>
+</table>
+<h2><a href="#ICMP">ICMP</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ICMPEchoReq">ICMPEchoReq (id, seq)</a></td>
+	<td class="summary">Create an ICMP Echo Request Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPEchoRep">ICMPEchoRep (id, seq)</a></td>
+	<td class="summary">Create an ICMP Echo Reply Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPDstUnreach">ICMPDstUnreach (mtu)</a></td>
+	<td class="summary">Create an ICMP Destination Unreachable Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPSrcQuench">ICMPSrcQuench</a></td>
+	<td class="summary">Create an ICMP Source Quench Unreachable Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPRedirect">ICMPRedirect (addr)</a></td>
+	<td class="summary">Create an ICMP Redirect Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPTimeExceeded">ICMPTimeExceeded</a></td>
+	<td class="summary">Create an ICMP Time Exceeded Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPEchoReq">ICMPEchoReq (id, seq)</a></td>
+	<td class="summary">Create an ICMP Echo Request Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPEchoRep">ICMPEchoRep (id, seq)</a></td>
+	<td class="summary">Create an ICMP Echo Reply Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPDstUnreach">ICMPDstUnreach (mtu)</a></td>
+	<td class="summary">Create an ICMP Destination Unreachable Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPSrcQuench">ICMPSrcQuench</a></td>
+	<td class="summary">Create an ICMP Source Quench Unreachable Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPRedirect">ICMPRedirect (addr)</a></td>
+	<td class="summary">Create an ICMP Redirect Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMPTimeExceeded">ICMPTimeExceeded</a></td>
+	<td class="summary">Create an ICMP Time Exceeded Layer</td>
+	</tr>
+</table>
+<h2><a href="#IP">IP</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IP">IP</a></td>
+	<td class="summary">A default IP layer instance</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip_nop">ip_nop ()</a></td>
+	<td class="summary">Construct an IPOption NOP (padding, option=1), shorthand for <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip_eol">ip_eol ()</a></td>
+	<td class="summary">Construct an IPOption EOL (padding, option=0), shorthand for <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rr">rr (the)</a></td>
+	<td class="summary">Construct an IPOption RR, shorthand for <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ssrr">ssrr (addrs)</a></td>
+	<td class="summary">Construct an IPOption SSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lsrr">lsrr (addrs)</a></td>
+	<td class="summary">Construct an IPOption LSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#traceroute">traceroute (src)</a></td>
+	<td class="summary">Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="summary">A default IP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="summary">A default IP EOL object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RR">RR (the)</a></td>
+	<td class="summary">Construct a RR IPOption, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SSRR">SSRR (addrs)</a></td>
+	<td class="summary">Construct a SSRR IPOption, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LSRR">LSRR (addrs)</a></td>
+	<td class="summary">Construct a LSRR IPOption, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP">IP</a></td>
+	<td class="summary">A default IP layer instance</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip_nop">ip_nop ()</a></td>
+	<td class="summary">Construct an IPOption NOP (padding, option=1), shorthand for <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ip_eol">ip_eol ()</a></td>
+	<td class="summary">Construct an IPOption EOL (padding, option=0), shorthand for <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rr">rr (the)</a></td>
+	<td class="summary">Construct an IPOption RR, shorthand for <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ssrr">ssrr (addrs)</a></td>
+	<td class="summary">Construct an IPOption SSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lsrr">lsrr (addrs)</a></td>
+	<td class="summary">Construct an IPOption LSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#traceroute">traceroute (src)</a></td>
+	<td class="summary">Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="summary">A default IP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="summary">A default IP EOL object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RR">RR (the)</a></td>
+	<td class="summary">Construct a RR IPOption, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SSRR">SSRR (addrs)</a></td>
+	<td class="summary">Construct a SSRR IPOption, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LSRR">LSRR (addrs)</a></td>
+	<td class="summary">Construct a LSRR IPOption, with proper padding</td>
+	</tr>
+</table>
+<h2><a href="#IPv6">IPv6</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IPv6">IPv6</a></td>
+	<td class="summary">A default IPv6 layer instance</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SRH">SRH (segs)</a></td>
+	<td class="summary">Create a Segment Routing Header from a list of segment</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6">IPv6</a></td>
+	<td class="summary">A default IPv6 layer instance</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SRH">SRH (segs)</a></td>
+	<td class="summary">Create a Segment Routing Header from a list of segment</td>
+	</tr>
+</table>
+<h2><a href="#TCP">TCP</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCP">TCP</a></td>
+	<td class="summary">A default TCP layer whose destination port is 80</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nop">nop ()</a></td>
+	<td class="summary">Construct a  TCPOption NOP (padding, kind=1), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eol">eol ()</a></td>
+	<td class="summary">Construct a  TCPOption EOL (padding, kind=0), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sackp">sackp ()</a></td>
+	<td class="summary">Construct a  TCPOption SACKP, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sack">sack (list)</a></td>
+	<td class="summary">Construct a  TCPOption SACK, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mss">mss (the)</a></td>
+	<td class="summary">Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#wscale">wscale (the)</a></td>
+	<td class="summary">Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mpcapable">mpcapable ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption MPCapable, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mpjoin">mpjoin ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="summary">A default TCP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="summary">A default TCPOption EOL object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SACKP">SACKP</a></td>
+	<td class="summary">A default TCPOption SACKPermitted object with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MSS">MSS</a></td>
+	<td class="summary">A TCP MSS object defaulting to 1460 bytes</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TS">TS</a></td>
+	<td class="summary">A default TCP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SACK">SACK (list)</a></td>
+	<td class="summary">Construct a SACK Option block, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#WSCALE">WSCALE</a></td>
+	<td class="summary">A default TCPOption WScale object (14), with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MPCAPABLE">MPCAPABLE</a></td>
+	<td class="summary">A default TCPOption MPCapable object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MPJOIN">MPJOIN</a></td>
+	<td class="summary">A default TCPOption MPjoin object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP">TCP</a></td>
+	<td class="summary">A default TCP layer whose destination port is 80</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#nop">nop ()</a></td>
+	<td class="summary">Construct a  TCPOption NOP (padding, kind=1), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eol">eol ()</a></td>
+	<td class="summary">Construct a  TCPOption EOL (padding, kind=0), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sackp">sackp ()</a></td>
+	<td class="summary">Construct a  TCPOption SACKP, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sack">sack (list)</a></td>
+	<td class="summary">Construct a  TCPOption SACK, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mss">mss (the)</a></td>
+	<td class="summary">Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#wscale">wscale (the)</a></td>
+	<td class="summary">Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mpcapable">mpcapable ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption MPCapable, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mpjoin">mpjoin ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="summary">A default TCP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="summary">A default TCPOption EOL object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SACKP">SACKP</a></td>
+	<td class="summary">A default TCPOption SACKPermitted object with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MSS">MSS</a></td>
+	<td class="summary">A TCP MSS object defaulting to 1460 bytes</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TS">TS</a></td>
+	<td class="summary">A default TCP NOP object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SACK">SACK (list)</a></td>
+	<td class="summary">Construct a SACK Option block, with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#WSCALE">WSCALE</a></td>
+	<td class="summary">A default TCPOption WScale object (14), with proper padding</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MPCAPABLE">MPCAPABLE</a></td>
+	<td class="summary">A default TCPOption MPCapable object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#MPJOIN">MPJOIN</a></td>
+	<td class="summary">A default TCPOption MPjoin object</td>
+	</tr>
+</table>
+<h2><a href="#UDP">UDP</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#UDP">UDP</a></td>
+	<td class="summary">A default UDP layer whose destination port is 53</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#UDP">UDP</a></td>
+	<td class="summary">A default UDP layer whose destination port is 53</td>
+	</tr>
+</table>
+<h2><a href="#lua_tracebox_Functions">lua_tracebox Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#tracebox_callback">tracebox_callback (ttl, r_ip, probe, rcv, mod)</a></td>
+	<td class="summary">Callback function type, to be provided as argument to tracebox</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tracebox">tracebox (pkt[, args])</a></td>
+	<td class="summary">Start sending the packet with increasing TTL values and compute the
+ differences</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "filter"></a>
+    <strong>filter (pkt)</strong>
+    </dt>
+    <dd>
+    Create a firewall rule to open ports on the host machine.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkt</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         a packet with a TCP or an UDP layer available.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/FWFilter.html#">FWFilter</a></span>
+        the firewall object that will open the source
+ 	and destination ports found in the TCP/UDP layer of the packet
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "filter"></a>
+    <strong>filter (pkt)</strong>
+    </dt>
+    <dd>
+    Create a firewall rule to open ports on the host machine.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkt</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         a packet with a TCP or an UDP layer available.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/FWFilter.html#">FWFilter</a></span>
+        the firewall object that will open the source
+ 	and destination ports found in the TCP/UDP layer of the packet
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2><a name="Layers"></a>Layers</h2>
+    <dl class="function">
+    <dt>
+    <a name = "raw"></a>
+    <strong>raw ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/Raw.html#Raw:new">Raw:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Raw.html#">Raw</a></span>
+        a new Raw Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Raw.html#Raw:new">Raw:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "icmp"></a>
+    <strong>icmp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip"></a>
+    <strong>ip ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IP.html#IP:new">IP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IP.html#">IP</a></span>
+        a new IP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IP.html#IP:new">IP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ipv6"></a>
+    <strong>ipv6 ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6.html#">IPv6</a></span>
+        a new IP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "srh"></a>
+    <strong>srh ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
+        a new IPv6SegmentRoutingHeader Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "tcp"></a>
+    <strong>tcp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/TCP.html#TCP:new">TCP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCP.html#">TCP</a></span>
+        a new TCP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCP.html#TCP:new">TCP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "udp"></a>
+    <strong>udp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/UDP.html#UDP:new">UDP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/UDP.html#">UDP</a></span>
+        a new UDP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/UDP.html#UDP:new">UDP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "raw"></a>
+    <strong>raw ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/Raw.html#Raw:new">Raw:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Raw.html#">Raw</a></span>
+        a new Raw Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Raw.html#Raw:new">Raw:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "icmp"></a>
+    <strong>icmp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#ICMP:new">ICMP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip"></a>
+    <strong>ip ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IP.html#IP:new">IP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IP.html#">IP</a></span>
+        a new IP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IP.html#IP:new">IP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ipv6"></a>
+    <strong>ipv6 ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6.html#">IPv6</a></span>
+        a new IP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6.html#IPv6:new">IPv6:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "srh"></a>
+    <strong>srh ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
+        a new IPv6SegmentRoutingHeader Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:new">IPv6SegmentRoutingHeader:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "tcp"></a>
+    <strong>tcp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/TCP.html#TCP:new">TCP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCP.html#">TCP</a></span>
+        a new TCP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCP.html#TCP:new">TCP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "udp"></a>
+    <strong>udp ([args])</strong>
+    </dt>
+    <dd>
+    Shorthand for <a href="../classes/UDP.html#UDP:new">UDP:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/UDP.html#">UDP</a></span>
+        a new UDP Layer object
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/UDP.html#UDP:new">UDP:new</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="ICMP"></a>ICMP</h2>
+    <dl class="function">
+    <dt>
+    <a name = "ICMPEchoReq"></a>
+    <strong>ICMPEchoReq (id, seq)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Echo Request Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP Identification number
+        </li>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP sequenc number
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPEchoRep"></a>
+    <strong>ICMPEchoRep (id, seq)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Echo Reply Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP Identification number
+        </li>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP sequenc number
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPDstUnreach"></a>
+    <strong>ICMPDstUnreach (mtu)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Destination Unreachable Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mtu</span>
+            <span class="types"><span class="type">num</span></span>
+         the mtu to specify
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPSrcQuench"></a>
+    <strong>ICMPSrcQuench</strong>
+    </dt>
+    <dd>
+    Create an ICMP Source Quench Unreachable Layer
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#">ICMP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ICMPRedirect"></a>
+    <strong>ICMPRedirect (addr)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Redirect Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addr</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the address for the redirection
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPTimeExceeded"></a>
+    <strong>ICMPTimeExceeded</strong>
+    </dt>
+    <dd>
+    Create an ICMP Time Exceeded Layer
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#">ICMP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ICMPEchoReq"></a>
+    <strong>ICMPEchoReq (id, seq)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Echo Request Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP Identification number
+        </li>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP sequenc number
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPEchoRep"></a>
+    <strong>ICMPEchoRep (id, seq)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Echo Reply Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP Identification number
+        </li>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP sequenc number
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPDstUnreach"></a>
+    <strong>ICMPDstUnreach (mtu)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Destination Unreachable Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mtu</span>
+            <span class="types"><span class="type">num</span></span>
+         the mtu to specify
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPSrcQuench"></a>
+    <strong>ICMPSrcQuench</strong>
+    </dt>
+    <dd>
+    Create an ICMP Source Quench Unreachable Layer
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#">ICMP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ICMPRedirect"></a>
+    <strong>ICMPRedirect (addr)</strong>
+    </dt>
+    <dd>
+    Create an ICMP Redirect Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addr</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the address for the redirection
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP Layer object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMPTimeExceeded"></a>
+    <strong>ICMPTimeExceeded</strong>
+    </dt>
+    <dd>
+    Create an ICMP Time Exceeded Layer
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/ICMP.html#">ICMP</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="IP"></a>IP</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IP"></a>
+    <strong>IP</strong>
+    </dt>
+    <dd>
+    A default IP layer instance
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IP.html#IP:new">IP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip_nop"></a>
+    <strong>ip_nop ()</strong>
+    </dt>
+    <dd>
+    Construct an IPOption NOP (padding, option=1), shorthand for <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip_eol"></a>
+    <strong>ip_eol ()</strong>
+    </dt>
+    <dd>
+    Construct an IPOption EOL (padding, option=0), shorthand for <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rr"></a>
+    <strong>rr (the)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption RR, shorthand for <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         number of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ssrr"></a>
+    <strong>ssrr (addrs)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption SSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "lsrr"></a>
+    <strong>lsrr (addrs)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption LSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "traceroute"></a>
+    <strong>traceroute (src)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">src</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Original IP
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "NOP"></a>
+    <strong>NOP</strong>
+    </dt>
+    <dd>
+    A default IP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#">IPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EOL"></a>
+    <strong>EOL</strong>
+    </dt>
+    <dd>
+    A default IP EOL object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#">IPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "RR"></a>
+    <strong>RR (the)</strong>
+    </dt>
+    <dd>
+    Construct a RR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         number of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SSRR"></a>
+    <strong>SSRR (addrs)</strong>
+    </dt>
+    <dd>
+    Construct a SSRR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "LSRR"></a>
+    <strong>LSRR (addrs)</strong>
+    </dt>
+    <dd>
+    Construct a LSRR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPS
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "IP"></a>
+    <strong>IP</strong>
+    </dt>
+    <dd>
+    A default IP layer instance
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IP.html#IP:new">IP:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip_nop"></a>
+    <strong>ip_nop ()</strong>
+    </dt>
+    <dd>
+    Construct an IPOption NOP (padding, option=1), shorthand for <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_nop">IPOption:new_nop</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ip_eol"></a>
+    <strong>ip_eol ()</strong>
+    </dt>
+    <dd>
+    Construct an IPOption EOL (padding, option=0), shorthand for <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_eol">IPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rr"></a>
+    <strong>rr (the)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption RR, shorthand for <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         number of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "ssrr"></a>
+    <strong>ssrr (addrs)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption SSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "lsrr"></a>
+    <strong>lsrr (addrs)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption LSRR, shorthand for <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "traceroute"></a>
+    <strong>traceroute (src)</strong>
+    </dt>
+    <dd>
+    Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">src</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         Original IP
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "NOP"></a>
+    <strong>NOP</strong>
+    </dt>
+    <dd>
+    A default IP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#">IPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EOL"></a>
+    <strong>EOL</strong>
+    </dt>
+    <dd>
+    A default IP EOL object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#">IPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "RR"></a>
+    <strong>RR (the)</strong>
+    </dt>
+    <dd>
+    Construct a RR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         number of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_rr">IPOption:new_rr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SSRR"></a>
+    <strong>SSRR (addrs)</strong>
+    </dt>
+    <dd>
+    Construct a SSRR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_ssrr">IPOption:new_ssrr</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "LSRR"></a>
+    <strong>LSRR (addrs)</strong>
+    </dt>
+    <dd>
+    Construct a LSRR IPOption, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">addrs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of IPS
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPOption.html#IPOption:new_lsrr">IPOption:new_lsrr</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="IPv6"></a>IPv6</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IPv6"></a>
+    <strong>IPv6</strong>
+    </dt>
+    <dd>
+    A default IPv6 layer instance
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6.html#">IPv6</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SRH"></a>
+    <strong>SRH (segs)</strong>
+    </dt>
+    <dd>
+    Create a Segment Routing Header from a list of segment
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">segs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a list of segments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "IPv6"></a>
+    <strong>IPv6</strong>
+    </dt>
+    <dd>
+    A default IPv6 layer instance
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6.html#">IPv6</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SRH"></a>
+    <strong>SRH (segs)</strong>
+    </dt>
+    <dd>
+    Create a Segment Routing Header from a list of segment
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">segs</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a list of segments
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="TCP"></a>TCP</h2>
+    <dl class="function">
+    <dt>
+    <a name = "TCP"></a>
+    <strong>TCP</strong>
+    </dt>
+    <dd>
+    A default TCP layer whose destination port is 80
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCP.html#">TCP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "nop"></a>
+    <strong>nop ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption NOP (padding, kind=1), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "eol"></a>
+    <strong>eol ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption EOL (padding, kind=0), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "sackp"></a>
+    <strong>sackp ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption SACKP, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "sack"></a>
+    <strong>sack (list)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption SACK, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         of pairs of number, will attempt to group them 2-by-2 or flatten sublists
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mss"></a>
+    <strong>mss (the)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         mss size
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "timestamp"></a>
+    <strong>timestamp ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "wscale"></a>
+    <strong>wscale (the)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         wscale shift value
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mpcapable"></a>
+    <strong>mpcapable ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MPCapable, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mpjoin"></a>
+    <strong>mpjoin ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "NOP"></a>
+    <strong>NOP</strong>
+    </dt>
+    <dd>
+    A default TCP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#">TCPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EOL"></a>
+    <strong>EOL</strong>
+    </dt>
+    <dd>
+    A default TCPOption EOL object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SACKP"></a>
+    <strong>SACKP</strong>
+    </dt>
+    <dd>
+    A default TCPOption SACKPermitted object with proper padding
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MSS"></a>
+    <strong>MSS</strong>
+    </dt>
+    <dd>
+    A TCP MSS object defaulting to 1460 bytes
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TS"></a>
+    <strong>TS</strong>
+    </dt>
+    <dd>
+    A default TCP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SACK"></a>
+    <strong>SACK (list)</strong>
+    </dt>
+    <dd>
+    Construct a SACK Option block, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         of pairs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "WSCALE"></a>
+    <strong>WSCALE</strong>
+    </dt>
+    <dd>
+    A default TCPOption WScale object (14), with proper padding
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MPCAPABLE"></a>
+    <strong>MPCAPABLE</strong>
+    </dt>
+    <dd>
+    A default TCPOption MPCapable object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MPJOIN"></a>
+    <strong>MPJOIN</strong>
+    </dt>
+    <dd>
+    A default TCPOption MPjoin object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TCP"></a>
+    <strong>TCP</strong>
+    </dt>
+    <dd>
+    A default TCP layer whose destination port is 80
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCP.html#">TCP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "nop"></a>
+    <strong>nop ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption NOP (padding, kind=1), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_nop">TCPOption:new_nop</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "eol"></a>
+    <strong>eol ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption EOL (padding, kind=0), shorthand for <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "sackp"></a>
+    <strong>sackp ()</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption SACKP, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "sack"></a>
+    <strong>sack (list)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption SACK, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         of pairs of number, will attempt to group them 2-by-2 or flatten sublists
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mss"></a>
+    <strong>mss (the)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         mss size
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "timestamp"></a>
+    <strong>timestamp ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "wscale"></a>
+    <strong>wscale (the)</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         wscale shift value
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mpcapable"></a>
+    <strong>mpcapable ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MPCapable, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "mpjoin"></a>
+    <strong>mpjoin ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "NOP"></a>
+    <strong>NOP</strong>
+    </dt>
+    <dd>
+    A default TCP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#">TCPOption</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EOL"></a>
+    <strong>EOL</strong>
+    </dt>
+    <dd>
+    A default TCPOption EOL object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_eol">TCPOption:new_eol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SACKP"></a>
+    <strong>SACKP</strong>
+    </dt>
+    <dd>
+    A default TCPOption SACKPermitted object with proper padding
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sackp">TCPOption:new_sackp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MSS"></a>
+    <strong>MSS</strong>
+    </dt>
+    <dd>
+    A TCP MSS object defaulting to 1460 bytes
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TS"></a>
+    <strong>TS</strong>
+    </dt>
+    <dd>
+    A default TCP NOP object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "SACK"></a>
+    <strong>SACK (list)</strong>
+    </dt>
+    <dd>
+    Construct a SACK Option block, with proper padding
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         of pairs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_sack">TCPOption:new_sack</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "WSCALE"></a>
+    <strong>WSCALE</strong>
+    </dt>
+    <dd>
+    A default TCPOption WScale object (14), with proper padding
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MPCAPABLE"></a>
+    <strong>MPCAPABLE</strong>
+    </dt>
+    <dd>
+    A default TCPOption MPCapable object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpcapable">TCPOption:new_mpcapable</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "MPJOIN"></a>
+    <strong>MPJOIN</strong>
+    </dt>
+    <dd>
+    A default TCPOption MPjoin object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="UDP"></a>UDP</h2>
+    <dl class="function">
+    <dt>
+    <a name = "UDP"></a>
+    <strong>UDP</strong>
+    </dt>
+    <dd>
+    A default UDP layer whose destination port is 53
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/UDP.html#">UDP</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "UDP"></a>
+    <strong>UDP</strong>
+    </dt>
+    <dd>
+    A default UDP layer whose destination port is 53
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/UDP.html#">UDP</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="lua_tracebox_Functions"></a>lua_tracebox Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "tracebox_callback"></a>
+    <strong>tracebox_callback (ttl, r_ip, probe, rcv, mod)</strong>
+    </dt>
+    <dd>
+    Callback function type, to be provided as argument to tracebox
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ttl</span>
+            <span class="types"><span class="type">num</span></span>
+         the current TTL value
+        </li>
+        <li><span class="parameter">r_ip</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the ip of the router that echoed the probe
+        </li>
+        <li><span class="parameter">probe</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the probe packet
+        </li>
+        <li><span class="parameter">rcv</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the echoed packet
+        </li>
+        <li><span class="parameter">mod</span>
+            <span class="types"><span class="type">PacketModifications</span></span>
+         the packet modifications list
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        1 to force tracebox to stop sending probes
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Globals.html#tracebox">tracebox</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="keyword">function</span> callback_func(ttl, r_ip, probe, rcv, mod)
+ 	<span class="global">print</span>(<span class="string">"Sent probe n#"</span> .. tll)
+ <span class="keyword">end</span>
+ </pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "tracebox"></a>
+    <strong>tracebox (pkt[, args])</strong>
+    </dt>
+    <dd>
+    Start sending the packet with increasing TTL values and compute the
+ differences
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkt</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the probe packet
+        </li>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a table with a callback function at key 'callback'
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+        the echoed packet from the destination or nil
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/Globals.html#tracebox_callback">tracebox_callback</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">tracebox(IP/TCP, { <span class="string">'callback'</span> = callback_func})</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

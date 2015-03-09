@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><strong>IP</strong></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>IP</code></h1>
+<p>The IP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IP.new_args">IP.new_args</a></td>
+	<td class="summary">Constructor arguments</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IP:new">IP:new ([args])</a></td>
+	<td class="summary">Constructor for an IP Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:source">IP:source (source)</a></td>
+	<td class="summary">Set the IP source address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:dest">IP:dest (dest)</a></td>
+	<td class="summary">Set the IP destination address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:flags">IP:flags (flags)</a></td>
+	<td class="summary">Set the IP flags</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:fragoffset">IP:fragoffset (offset)</a></td>
+	<td class="summary">Set the IP fragment offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:ttl">IP:ttl (tll)</a></td>
+	<td class="summary">Set the IP TTL</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:id">IP:id (id)</a></td>
+	<td class="summary">Set the IP Identification</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:dscp">IP:dscp (dscp)</a></td>
+	<td class="summary">Set the IP DSCP</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IP:ecn">IP:ecn (ecn)</a></td>
+	<td class="summary">Set the IP ECN</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IP.new_args"></a>
+    <strong>IP.new_args</strong>
+    </dt>
+    <dd>
+    Constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">dst</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the IP dst
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP identifier
+        </li>
+        <li><span class="parameter">flags</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP flags
+        </li>
+        <li><span class="parameter">ttl</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP TTL
+        </li>
+        <li><span class="parameter">offset</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP fragment offset
+        </li>
+        <li><span class="parameter">ecn</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP ecn flag
+        </li>
+        <li><span class="parameter">dscp</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP dscp byte
+        </li>
+        <li><span class="parameter">proto</span>
+            <span class="types"><span class="type">num</span></span>
+         the IP protocol number
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IP:new"></a>
+    <strong>IP:new ([args])</strong>
+    </dt>
+    <dd>
+    Constructor for an IP Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments, all grouped inside a table, see <a href="../classes/IP.html#IP.new_args">new_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IP.html#">IP</a></span>
+        a new IP object
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> IP.new{
+	dst="<span class="number">8.8</span>.<span class="number">8.8</span>,
+	proto=<span class="number">17</span>,
+	tll=<span class="number">64</span>
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "IP:source"></a>
+    <strong>IP:source (source)</strong>
+    </dt>
+    <dd>
+    Set the IP source address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">source</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the IP source address
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:dest"></a>
+    <strong>IP:dest (dest)</strong>
+    </dt>
+    <dd>
+    Set the IP destination address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dest</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the IP destination address
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:flags"></a>
+    <strong>IP:flags (flags)</strong>
+    </dt>
+    <dd>
+    Set the IP flags
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">flags</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:fragoffset"></a>
+    <strong>IP:fragoffset (offset)</strong>
+    </dt>
+    <dd>
+    Set the IP fragment offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">offset</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:ttl"></a>
+    <strong>IP:ttl (tll)</strong>
+    </dt>
+    <dd>
+    Set the IP TTL
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tll</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:id"></a>
+    <strong>IP:id (id)</strong>
+    </dt>
+    <dd>
+    Set the IP Identification
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:dscp"></a>
+    <strong>IP:dscp (dscp)</strong>
+    </dt>
+    <dd>
+    Set the IP DSCP
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dscp</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IP:ecn"></a>
+    <strong>IP:ecn (ecn)</strong>
+    </dt>
+    <dd>
+    Set the IP ECN
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ecn</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

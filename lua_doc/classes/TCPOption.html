@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><strong>TCPOption</strong></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>TCPOption</code></h1>
+<p>Options for the TCP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption.Timestamp_args">TCPOption.Timestamp_args</a></td>
+	<td class="summary">The Timestamp Option arguments</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption.MPJoin_args">TCPOption.MPJoin_args</a></td>
+	<td class="summary">The MPTCPJoin Option arguments</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption.MPCapable_args">TCPOption.MPCapable_args</a></td>
+	<td class="summary">The MPTCPCapable Option arguments</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_nop">TCPOption:new_nop ()</a></td>
+	<td class="summary">Create a new NOP Option (Kind=1)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_eol">TCPOption:new_eol ()</a></td>
+	<td class="summary">Create a new EOL Option (Kind=0)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_sackp">TCPOption:new_sackp ()</a></td>
+	<td class="summary">Create a new SACKPermitted Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_sack">TCPOption:new_sack (a)</a></td>
+	<td class="summary">Create a new SACK Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_mss">TCPOption:new_mss (the)</a></td>
+	<td class="summary">Create a new MSS Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_timestamp">TCPOption:new_timestamp ([args])</a></td>
+	<td class="summary">Create a new Timestamp Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_wscale">TCPOption:new_wscale (wscale)</a></td>
+	<td class="summary">Create a new WindowScale Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_mpjoin">TCPOption:new_mpjoin ([the])</a></td>
+	<td class="summary">Create a new MPTCPJoin Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new_mpcapable">TCPOption:new_mpcapable ([the])</a></td>
+	<td class="summary">Create a new MPTCPCapable Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:kind">TCPOption:kind (kind)</a></td>
+	<td class="summary">Set the Option Kind</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:data">TCPOption:data (data)</a></td>
+	<td class="summary">Set the Option data (raw access)</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "TCPOption.Timestamp_args"></a>
+    <strong>TCPOption.Timestamp_args</strong>
+    </dt>
+    <dd>
+    The Timestamp Option arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+            <span class="types"><span class="type">num</span></span>
+         the timestamp value
+        </li>
+        <li><span class="parameter">ecr</span>
+            <span class="types"><span class="type">num</span></span>
+         the timestamp echo value
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">new_timestamp</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption.MPJoin_args"></a>
+    <strong>TCPOption.MPJoin_args</strong>
+    </dt>
+    <dd>
+    The MPTCPJoin Option arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">token</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+        <li><span class="parameter">nonce</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         address ID
+        </li>
+        <li><span class="parameter">backup</span>
+            <span class="types"><span class="type">bool</span></span>
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">new_mpjoin</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption.MPCapable_args"></a>
+    <strong>TCPOption.MPCapable_args</strong>
+    </dt>
+    <dd>
+    The MPTCPCapable Option arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">skey</span>
+            <span class="types"><span class="type">num</span></span>
+         sender key
+        </li>
+        <li><span class="parameter">rkey</span>
+            <span class="types"><span class="type">num</span></span>
+         receiver key
+        </li>
+        <li><span class="parameter">csum</span>
+            <span class="types"><span class="type">bool</span></span>
+         checksum
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">new_mpjoin</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "TCPOption:new_nop"></a>
+    <strong>TCPOption:new_nop ()</strong>
+    </dt>
+    <dd>
+    Create a new NOP Option (Kind=1)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_eol"></a>
+    <strong>TCPOption:new_eol ()</strong>
+    </dt>
+    <dd>
+    Create a new EOL Option (Kind=0)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_sackp"></a>
+    <strong>TCPOption:new_sackp ()</strong>
+    </dt>
+    <dd>
+    Create a new SACKPermitted Option
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_sack"></a>
+    <strong>TCPOption:new_sack (a)</strong>
+    </dt>
+    <dd>
+    Create a new SACK Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         list of pairs, either grouped in subtables or in one single flat table
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">l = TCPOption:new_sack{<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>} <span class="comment">-- Will create a SACK option with pairs (1,2) and (3,4)
+</span> l = TCPOption:new_sack{{<span class="number">1</span>, <span class="number">2</span>}, {<span class="number">3</span>, <span class="number">4</span>}} -- Equivalent to the above</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_mss"></a>
+    <strong>TCPOption:new_mss (the)</strong>
+    </dt>
+    <dd>
+    Create a new MSS Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         MSS value value
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_timestamp"></a>
+    <strong>TCPOption:new_timestamp ([args])</strong>
+    </dt>
+    <dd>
+    Create a new Timestamp Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         the timestamp options, see <a href="../classes/TCPOption.html#TCPOption.Timestamp_args">Timestamp_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_wscale"></a>
+    <strong>TCPOption:new_wscale (wscale)</strong>
+    </dt>
+    <dd>
+    Create a new WindowScale Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">wscale</span>
+            <span class="types"><span class="type">num</span></span>
+         the window scaling factor
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_mpjoin"></a>
+    <strong>TCPOption:new_mpjoin ([the])</strong>
+    </dt>
+    <dd>
+    Create a new MPTCPJoin Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         MPJoin options, see <a href="../classes/TCPOption.html#TCPOption.MPJoin_args">MPJoin_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:new_mpcapable"></a>
+    <strong>TCPOption:new_mpcapable ([the])</strong>
+    </dt>
+    <dd>
+    Create a new MPTCPCapable Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         MPCapable options, see <a href="../classes/TCPOption.html#TCPOption.MPCapable_args">MPCapable_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:kind"></a>
+    <strong>TCPOption:kind (kind)</strong>
+    </dt>
+    <dd>
+    Set the Option Kind
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">kind</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:data"></a>
+    <strong>TCPOption:data (data)</strong>
+    </dt>
+    <dd>
+    Set the Option data (raw access)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">data</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

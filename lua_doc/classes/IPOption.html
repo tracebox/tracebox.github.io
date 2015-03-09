@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><strong>IPOption</strong></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>IPOption</code></h1>
+<p>Options for the IP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_nop">IPOption:new_nop ()</a></td>
+	<td class="summary">Create a new NOP Option (Option=1)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_eol">IPOption:new_eol ()</a></td>
+	<td class="summary">Create a new EOL Option (Option=0)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_ssrr">IPOption:new_ssrr (ips)</a></td>
+	<td class="summary">Create a new SSRR Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_lsrr">IPOption:new_lsrr (ips)</a></td>
+	<td class="summary">Create a new LSRR Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_rr">IPOption:new_rr (n)</a></td>
+	<td class="summary">Create a new RR Option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPOption:new_traceroute">IPOption:new_traceroute (orig_ip)</a></td>
+	<td class="summary">Create a new Traceroute Option</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IPOption:new_nop"></a>
+    <strong>IPOption:new_nop ()</strong>
+    </dt>
+    <dd>
+    Create a new NOP Option (Option=1)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPOption:new_eol"></a>
+    <strong>IPOption:new_eol ()</strong>
+    </dt>
+    <dd>
+    Create a new EOL Option (Option=0)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPOption:new_ssrr"></a>
+    <strong>IPOption:new_ssrr (ips)</strong>
+    </dt>
+    <dd>
+    Create a new SSRR Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ips</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">IPOption.new{<span class="string">'1.1.1.1'</span>, <span class="string">'2.2.2.2'</span>, <span class="string">'3.3.3.3'</span>}</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "IPOption:new_lsrr"></a>
+    <strong>IPOption:new_lsrr (ips)</strong>
+    </dt>
+    <dd>
+    Create a new LSRR Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ips</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a list of IPs
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPOption:new_rr"></a>
+    <strong>IPOption:new_rr (n)</strong>
+    </dt>
+    <dd>
+    Create a new RR Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">n</span>
+            <span class="types"><span class="type">number</span></span>
+         the number of NULL(0.0.0.0) addresses to put in the RR
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPOption:new_traceroute"></a>
+    <strong>IPOption:new_traceroute (orig_ip)</strong>
+    </dt>
+    <dd>
+    Create a new Traceroute Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">orig_ip</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the original IP
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPOption.html#">IPOption</a></span>
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

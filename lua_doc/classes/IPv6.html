@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><strong>IPv6</strong></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>IPv6</code></h1>
+<p>The IPv6 Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IPv6.new_args">IPv6.new_args</a></td>
+	<td class="summary">Constructor arguments</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:new">IPv6:new ([args])</a></td>
+	<td class="summary">Constructor for an IPv6 Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:source">IPv6:source (ip)</a></td>
+	<td class="summary">Set the source address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:dest">IPv6:dest (ip)</a></td>
+	<td class="summary">Set the destination address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:tc">IPv6:tc (tc)</a></td>
+	<td class="summary">Set the traffic class</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:flowlabel">IPv6:flowlabel (flowlabel)</a></td>
+	<td class="summary">Set the flow label</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IPv6:hoplimit">IPv6:hoplimit (hops)</a></td>
+	<td class="summary">Set the hop limit (=TTL)</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IPv6.new_args"></a>
+    <strong>IPv6.new_args</strong>
+    </dt>
+    <dd>
+    Constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">dst</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the IPv6 dst
+        </li>
+        <li><span class="parameter">tc</span>
+            <span class="types"><span class="type">num</span></span>
+         the IPv6 traffic class
+        </li>
+        <li><span class="parameter">flowlabel</span>
+            <span class="types"><span class="type">num</span></span>
+         the IPv6 flowlabel
+        </li>
+        <li><span class="parameter">hoplimit</span>
+            <span class="types"><span class="type">num</span></span>
+         the IPv6 hop limit
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "IPv6:new"></a>
+    <strong>IPv6:new ([args])</strong>
+    </dt>
+    <dd>
+    Constructor for an IPv6 Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments, all grouped inside a table, see <a href="../classes/IPv6.html#IPv6.new_args">new_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6.html#">IPv6</a></span>
+        a new IPv6 object
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> IPv6.new{
+	dst=<span class="string">"2001:db8:1234::1"</span>,
+	hoplimit=<span class="number">4</span>
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "IPv6:source"></a>
+    <strong>IPv6:source (ip)</strong>
+    </dt>
+    <dd>
+    Set the source address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ip</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6:dest"></a>
+    <strong>IPv6:dest (ip)</strong>
+    </dt>
+    <dd>
+    Set the destination address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ip</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6:tc"></a>
+    <strong>IPv6:tc (tc)</strong>
+    </dt>
+    <dd>
+    Set the traffic class
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">tc</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6:flowlabel"></a>
+    <strong>IPv6:flowlabel (flowlabel)</strong>
+    </dt>
+    <dd>
+    Set the flow label
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">flowlabel</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IPv6:hoplimit"></a>
+    <strong>IPv6:hoplimit (hops)</strong>
+    </dt>
+    <dd>
+    Set the hop limit (=TTL)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">hops</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

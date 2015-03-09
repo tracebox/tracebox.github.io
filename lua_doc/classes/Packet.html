@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><strong>Packet</strong></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Packet</code></h1>
+<p>An object representing a Packet, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Packet:source">Packet:source ()</a></td>
+	<td class="summary">Get the Source IP address of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:destination">Packet:destination ()</a></td>
+	<td class="summary">Get the Destination IP address of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:new">Packet:new ()</a></td>
+	<td class="summary">Create a new Packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:ip">Packet:ip ()</a></td>
+	<td class="summary">Get the IP Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:ipv6">Packet:ipv6 ()</a></td>
+	<td class="summary">Get the IPv6 Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:srh">Packet:srh ()</a></td>
+	<td class="summary">Get the IPv6SegmentRoutingHeader Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:tcp">Packet:tcp ()</a></td>
+	<td class="summary">Get the TCP Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:udp">Packet:udp ()</a></td>
+	<td class="summary">Get the UDP Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:icmp">Packet:icmp ()</a></td>
+	<td class="summary">Get the ICMP Layer of this packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:payload">Packet:payload ()</a></td>
+	<td class="summary">Get the Raw Layer of this packet
+ (a.k.a.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Packet:source"></a>
+    <strong>Packet:source ()</strong>
+    </dt>
+    <dd>
+    Get the Source IP address of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        IP address
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:destination"></a>
+    <strong>Packet:destination ()</strong>
+    </dt>
+    <dd>
+    Get the Destination IP address of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        IP address
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:new"></a>
+    <strong>Packet:new ()</strong>
+    </dt>
+    <dd>
+    Create a new Packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+        a new empty Packet
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:ip"></a>
+    <strong>Packet:ip ()</strong>
+    </dt>
+    <dd>
+    Get the IP Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IP.html#">IP</a></span>
+        the IP layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:ipv6"></a>
+    <strong>Packet:ipv6 ()</strong>
+    </dt>
+    <dd>
+    Get the IPv6 Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6.html#">IPv6</a></span>
+        the IPv6 layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:srh"></a>
+    <strong>Packet:srh ()</strong>
+    </dt>
+    <dd>
+    Get the IPv6SegmentRoutingHeader Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/IPv6SegmentRoutingHeader.html#">IPv6SegmentRoutingHeader</a></span>
+        the IPv6SegmentRoutingHeader layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:tcp"></a>
+    <strong>Packet:tcp ()</strong>
+    </dt>
+    <dd>
+    Get the TCP Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCP.html#">TCP</a></span>
+        the TCP layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:udp"></a>
+    <strong>Packet:udp ()</strong>
+    </dt>
+    <dd>
+    Get the UDP Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/UDP.html#">UDP</a></span>
+        the UDP layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:icmp"></a>
+    <strong>Packet:icmp ()</strong>
+    </dt>
+    <dd>
+    Get the ICMP Layer of this packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        the ICMP layer or nil
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:payload"></a>
+    <strong>Packet:payload ()</strong>
+    </dt>
+    <dd>
+    Get the Raw Layer of this packet
+ (a.k.a.  all the data after the last known layer)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Raw.html#">Raw</a></span>
+        the Raw layer or nil
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><strong>ICMP</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>ICMP</code></h1>
+<p>The ICMP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ICMP.new_args">ICMP.new_args</a></td>
+	<td class="summary">Constructor arguments</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:new">ICMP:new ([args])</a></td>
+	<td class="summary">Constructor for an ICMP Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:type">ICMP:type (type)</a></td>
+	<td class="summary">Set the ICMP type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:code">ICMP:code (code)</a></td>
+	<td class="summary">Set the ICMP code</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:id">ICMP:id (id)</a></td>
+	<td class="summary">Set the ICMP identifier</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:seqno">ICMP:seqno (seqno)</a></td>
+	<td class="summary">Set the ICMP sequence number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:ptr">ICMP:ptr (ptr)</a></td>
+	<td class="summary">Set the ICMP pointer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:gw">ICMP:gw (gw)</a></td>
+	<td class="summary">Set the ICMP gateway</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:len">ICMP:len (len)</a></td>
+	<td class="summary">Set the ICMP length</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ICMP:mtu">ICMP:mtu (mtu)</a></td>
+	<td class="summary">Set the ICMP MTU</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "ICMP.new_args"></a>
+    <strong>ICMP.new_args</strong>
+    </dt>
+    <dd>
+    Constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">type</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP type
+        </li>
+        <li><span class="parameter">code</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP code
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP identifier
+        </li>
+        <li><span class="parameter">seqno</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP seq. number
+        </li>
+        <li><span class="parameter">ptr</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP pointer
+        </li>
+        <li><span class="parameter">len</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP length
+        </li>
+        <li><span class="parameter">mtu</span>
+            <span class="types"><span class="type">num</span></span>
+         the ICMP mtu
+        </li>
+        <li><span class="parameter">gw</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the ICMP gateway
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "ICMP:new"></a>
+    <strong>ICMP:new ([args])</strong>
+    </dt>
+    <dd>
+    Constructor for an ICMP Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments, all grouped inside a table, see <a href="../classes/ICMP.html#ICMP.new_args">new_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/ICMP.html#">ICMP</a></span>
+        a new ICMP object
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> ICMP.new{
+   <span class="global">type</span>=<span class="number">1</span>,
+   code=<span class="number">2</span>,
+   id=<span class="number">37</span>,
+   seqno=<span class="number">17</span>
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "ICMP:type"></a>
+    <strong>ICMP:type (type)</strong>
+    </dt>
+    <dd>
+    Set the ICMP type
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">type</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:code"></a>
+    <strong>ICMP:code (code)</strong>
+    </dt>
+    <dd>
+    Set the ICMP code
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:id"></a>
+    <strong>ICMP:id (id)</strong>
+    </dt>
+    <dd>
+    Set the ICMP identifier
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:seqno"></a>
+    <strong>ICMP:seqno (seqno)</strong>
+    </dt>
+    <dd>
+    Set the ICMP sequence number
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">seqno</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:ptr"></a>
+    <strong>ICMP:ptr (ptr)</strong>
+    </dt>
+    <dd>
+    Set the ICMP pointer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ptr</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:gw"></a>
+    <strong>ICMP:gw (gw)</strong>
+    </dt>
+    <dd>
+    Set the ICMP gateway
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">gw</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the IP address of the gateway
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:len"></a>
+    <strong>ICMP:len (len)</strong>
+    </dt>
+    <dd>
+    Set the ICMP length
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">len</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ICMP:mtu"></a>
+    <strong>ICMP:mtu (mtu)</strong>
+    </dt>
+    <dd>
+    Set the ICMP MTU
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mtu</span>
+            <span class="types"><span class="type">num</span></span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><strong>TCP</strong></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>TCP</code></h1>
+<p>The TCP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a></p>
+<p></p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCP.new_args">TCP.new_args</a></td>
+	<td class="summary">Constructor arguments</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCP:new">TCP:new ([args])</a></td>
+	<td class="summary">Constructor for a TCP Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:setsource">TCP:setsource (source)</a></td>
+	<td class="summary">Set the TCP source port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:getsource">TCP:getsource ()</a></td>
+	<td class="summary">Get the TCP source port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:sedest">TCP:sedest (dest)</a></td>
+	<td class="summary">Set the TCP destination port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:gedest">TCP:gedest ()</a></td>
+	<td class="summary">Get the TCP destination port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:setseq">TCP:setseq (seq)</a></td>
+	<td class="summary">Set the TCP sequence number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:getseq">TCP:getseq ()</a></td>
+	<td class="summary">Get the TCP sequence number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:setack">TCP:setack (ack)</a></td>
+	<td class="summary">Set the TCP acknowledgment number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:getack">TCP:getack ()</a></td>
+	<td class="summary">Get the TCP acknowledgment number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:setwin">TCP:setwin (win)</a></td>
+	<td class="summary">Set the TCP window size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:getwin">TCP:getwin ()</a></td>
+	<td class="summary">Get the TCP window size</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:setflags">TCP:setflags (flags)</a></td>
+	<td class="summary">Set the TCP flags</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP:getflags">TCP:getflags ()</a></td>
+	<td class="summary">Get the TCP flags</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "TCP.new_args"></a>
+    <strong>TCP.new_args</strong>
+    </dt>
+    <dd>
+    Constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">src</span>
+            <span class="types"><span class="type">num</span></span>
+         the source port
+        </li>
+        <li><span class="parameter">dst</span>
+            <span class="types"><span class="type">num</span></span>
+         the destination port
+        </li>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the sequence number
+        </li>
+        <li><span class="parameter">ack</span>
+            <span class="types"><span class="type">num</span></span>
+         the acknowledgment number
+        </li>
+        <li><span class="parameter">win</span>
+            <span class="types"><span class="type">num</span></span>
+         the window size
+        </li>
+        <li><span class="parameter">flags</span>
+            <span class="types"><span class="type">num</span></span>
+         the flags (all at once)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "TCP:new"></a>
+    <strong>TCP:new ([args])</strong>
+    </dt>
+    <dd>
+    Constructor for a TCP Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments, all grouped inside a table, see <a href="../classes/TCP.html#TCP.new_args">new_args</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCP.html#">TCP</a></span>
+        a new TCP object
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> TCP.new{
+ 	 dst=<span class="number">80</span>,
+ 	 flags=<span class="number">18</span>
+ }</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "TCP:setsource"></a>
+    <strong>TCP:setsource (source)</strong>
+    </dt>
+    <dd>
+    Set the TCP source port
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">source</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP source port
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:getsource"></a>
+    <strong>TCP:getsource ()</strong>
+    </dt>
+    <dd>
+    Get the TCP source port
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        source the TCP source port
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:sedest"></a>
+    <strong>TCP:sedest (dest)</strong>
+    </dt>
+    <dd>
+    Set the TCP destination port
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dest</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP destination port
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:gedest"></a>
+    <strong>TCP:gedest ()</strong>
+    </dt>
+    <dd>
+    Get the TCP destination port
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        dest the TCP destination port
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:setseq"></a>
+    <strong>TCP:setseq (seq)</strong>
+    </dt>
+    <dd>
+    Set the TCP sequence number
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">seq</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP sequence number
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:getseq"></a>
+    <strong>TCP:getseq ()</strong>
+    </dt>
+    <dd>
+    Get the TCP sequence number
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        seq the TCP sequence number
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:setack"></a>
+    <strong>TCP:setack (ack)</strong>
+    </dt>
+    <dd>
+    Set the TCP acknowledgment number
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ack</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP acknowledgment number
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:getack"></a>
+    <strong>TCP:getack ()</strong>
+    </dt>
+    <dd>
+    Get the TCP acknowledgment number
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        ack the TCP acknowledgment number
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:setwin"></a>
+    <strong>TCP:setwin (win)</strong>
+    </dt>
+    <dd>
+    Set the TCP window size
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">win</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP window size
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:getwin"></a>
+    <strong>TCP:getwin ()</strong>
+    </dt>
+    <dd>
+    Get the TCP window size
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        win the TCP window size
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:setflags"></a>
+    <strong>TCP:setflags (flags)</strong>
+    </dt>
+    <dd>
+    Set the TCP flags
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">flags</span>
+            <span class="types"><span class="type">num</span></span>
+         the TCP flags
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP:getflags"></a>
+    <strong>TCP:getflags ()</strong>
+    </dt>
+    <dd>
+    Get the TCP flags
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        flags the TCP flags
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
