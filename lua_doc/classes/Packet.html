@@ -32,6 +32,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Tables">Tables</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
@@ -67,6 +68,13 @@
 </p>
 
 
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Packet.sendrecv_args">Packet.sendrecv_args</a></td>
+	<td class="summary">sendrecv arguments</td>
+	</tr>
+</table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
@@ -80,6 +88,14 @@
 	<tr>
 	<td class="name" nowrap><a href="#Packet:new">Packet:new ()</a></td>
 	<td class="summary">Create a new Packet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:sendrecv">Packet:sendrecv ([args])</a></td>
+	<td class="summary">Send a packet and wait for a reply</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:send">Packet:send ([interface])</a></td>
+	<td class="summary">Send a packet over the wire</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Packet:ip">Packet:ip ()</a></td>
@@ -116,6 +132,46 @@
 <br/>
 
 
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Packet.sendrecv_args"></a>
+    <strong>Packet.sendrecv_args</strong>
+    </dt>
+    <dd>
+    sendrecv arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">timeout</span>
+            <span class="types"><span class="type">num</span></span>
+         How long to wait for a response
+        </li>
+        <li><span class="parameter">retry</span>
+            <span class="types"><span class="type">num</span></span>
+
+<p> How many times should we send another packet and try again</p>
+<pre><code>in case of timeout
+</code></pre>
+
+        </li>
+        <li><span class="parameter">interface</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+<p> force the outgoing interface, instead of using the</p>
+<pre><code>default interface for the destination address
+</code></pre>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
     <h2><a name="Methods"></a>Methods</h2>
     <dl class="function">
     <dt>
@@ -173,6 +229,52 @@
            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
         a new empty Packet
     </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:sendrecv"></a>
+    <strong>Packet:sendrecv ([args])</strong>
+    </dt>
+    <dd>
+    Send a packet and wait for a reply
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         A table containing the optional arguments, see <a href="../classes/Packet.html#Packet.sendrecv_args">sendrecv_args</a>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:send"></a>
+    <strong>Packet:send ([interface])</strong>
+    </dt>
+    <dd>
+    Send a packet over the wire
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">interface</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+<p> force the outgoing interface, instead of using the</p>
+<pre><code>default interface for the destination address
+</code></pre>
+
+        </li>
+    </ul>
+
 
 
 

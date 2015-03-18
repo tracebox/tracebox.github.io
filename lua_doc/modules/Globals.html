@@ -33,12 +33,14 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
 <li><a href="#Layers">Layers</a></li>
 <li><a href="#ICMP">ICMP</a></li>
 <li><a href="#IP">IP</a></li>
 <li><a href="#IPv6">IPv6</a></li>
 <li><a href="#TCP">TCP</a></li>
 <li><a href="#UDP">UDP</a></li>
+<li><a href="#Debugging">Debugging</a></li>
 </ul>
 
 
@@ -91,6 +93,30 @@
 	<tr>
 	<td class="name" nowrap><a href="#filter">filter (pkt)</a></td>
 	<td class="summary">Create a firewall rule to open ports on the host machine.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sleep">sleep (the)</a></td>
+	<td class="summary">Suspend the current execution thread for a fixed amount of time</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dn6">dn6 (a)</a></td>
+	<td class="summary">Resolve a domain name to an IPv6 address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dn4">dn4 (a)</a></td>
+	<td class="summary">Resolve a domain name to an IPv4 address</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#gethostname">gethostname (an)</a></td>
+	<td class="summary">Attempt to map the given IP address to a domain name</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#argv">argv</a></td>
+	<td class="summary">Contains all arguments that appeared on the command line, in the order they
+ appeared.</td>
 	</tr>
 </table>
 <h2><a href="#Layers">Layers</a></h2>
@@ -487,6 +513,17 @@
 	<td class="summary">A default UDP layer whose destination port is 53</td>
 	</tr>
 </table>
+<h2><a href="#Debugging">Debugging</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#__dump_c_stack">__dump_c_stack ()</a></td>
+	<td class="summary">Return a string containing the content of the lua C stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#__cpp_object_count">__cpp_object_count ()</a></td>
+	<td class="summary">Return the number of objects that are referenced</td>
+	</tr>
+</table>
 
 <br/>
 <br/>
@@ -656,6 +693,147 @@
     <h3>Usage:</h3>
     <ul>
         <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "sleep"></a>
+    <strong>sleep (the)</strong>
+    </dt>
+    <dd>
+    Suspend the current execution thread for a fixed amount of time
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">the</span>
+            <span class="types"><span class="type">num</span></span>
+         number of milliseconds during which the thread should sleep
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dn6"></a>
+    <strong>dn6 (a)</strong>
+    </dt>
+    <dd>
+    Resolve a domain name to an IPv6 address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         domain name. If it is an IP address, does nothing
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        the corresponding IPv6 address, or nil if the call failed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dn4"></a>
+    <strong>dn4 (a)</strong>
+    </dt>
+    <dd>
+    Resolve a domain name to an IPv4 address
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         domain name. If it is an IP address, does nothing
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        the corresponding IPv4 address, or nil if the call failed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "gethostname"></a>
+    <strong>gethostname (an)</strong>
+    </dt>
+    <dd>
+    Attempt to map the given IP address to a domain name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">an</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         IP address, does nothing on domain names
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        the corresponding IP address, either v4 or v6
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "argv"></a>
+    <strong>argv</strong>
+    </dt>
+    <dd>
+    Contains all arguments that appeared on the command line, in the order they
+ appeared.  Spaces in the command line act as separator between arguments,
+ escape them with quotes if you want to pass in a longer string.
+
+
+    <ul>
+        <li><span class="parameter">argv</span>
+            <span class="types"><span class="type">vector</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> tracebox -l <span class="string">"print(#argv)"</span> Hello <span class="string">" "</span> \<span class="string">" Worl "</span>d
+
+ 	Will <span class="global">print</span> <span class="number">4</span>, as there are five arguments:
+ 		<span class="number">1.</span> Hello
+ 		<span class="number">2.</span> <span class="string">" "</span> (without the quotes)
+ 		<span class="number">3.</span> " (an actual quote)
+ 		<span class="number">4.</span> Worl
+ 		<span class="number">5.</span> d (quote was there only to fix hilighting ...)
+ 	Escape-rules depends on your shell.</pre>
     </ul>
 
 </dd>
@@ -3178,6 +3356,49 @@
     <ul>
          <a href="../classes/UDP.html#">UDP</a>
     </ul>
+
+
+</dd>
+</dl>
+    <h2><a name="Debugging"></a>Debugging</h2>
+    <dl class="function">
+    <dt>
+    <a name = "__dump_c_stack"></a>
+    <strong>__dump_c_stack ()</strong>
+    </dt>
+    <dd>
+    Return a string containing the content of the lua C stack
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+        the content of the C stack
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "__cpp_object_count"></a>
+    <strong>__cpp_object_count ()</strong>
+    </dt>
+    <dd>
+    Return the number of objects that are referenced
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        object_count
+    </ol>
+
+
 
 
 </dd>
