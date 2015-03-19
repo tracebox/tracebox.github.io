@@ -38,13 +38,14 @@
   <li><a href="classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="classes/UDP.html">UDP</a></li>
   <li><a href="classes/IP.html">IP</a></li>
-  <li><a href="classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="classes/FWFilter.html">FWFilter</a></li>
-  <li><a href="classes/Packet.html">Packet</a></li>
+  <li><a href="classes/Base_Object.html">Base_Object</a></li>
   <li><a href="classes/IPOption.html">IPOption</a></li>
   <li><a href="classes/TCPOption.html">TCPOption</a></li>
   <li><a href="classes/Raw.html">Raw</a></li>
   <li><a href="classes/IPv6.html">IPv6</a></li>
+  <li><a href="classes/Packet.html">Packet</a></li>
   <li><a href="classes/TCP.html">TCP</a></li>
   <li><a href="classes/ICMP.html">ICMP</a></li>
 </ul>
@@ -106,16 +107,18 @@ print(tostring(result))
 		<td class="summary">The IP Layer, inherits from <a href="classes/Base_Object.html#">Base_Object</a></td>
 	</tr>
 	<tr>
-		<td class="name"  nowrap><a href="classes/Base_Object.html">Base_Object</a></td>
-		<td class="summary">The basic methods supported by most objects</td>
+		<td class="name"  nowrap><a href="classes/__cpp_obj.html">__cpp_obj</a></td>
+		<td class="summary">Abstract type for all custom classes exposed from cpp,
+ exposed to lua with reference couting.</td>
 	</tr>
 	<tr>
 		<td class="name"  nowrap><a href="classes/FWFilter.html">FWFilter</a></td>
 		<td class="summary">A simple firewall rule on the host machine.</td>
 	</tr>
 	<tr>
-		<td class="name"  nowrap><a href="classes/Packet.html">Packet</a></td>
-		<td class="summary">An object representing a Packet, inherits from <a href="classes/Base_Object.html#">Base_Object</a></td>
+		<td class="name"  nowrap><a href="classes/Base_Object.html">Base_Object</a></td>
+		<td class="summary">Abstract type, providing the basic methods supported by most objects,
+ inherits from <a href="classes/__cpp_obj.html#">__cpp_obj</a>.</td>
 	</tr>
 	<tr>
 		<td class="name"  nowrap><a href="classes/IPOption.html">IPOption</a></td>
@@ -132,6 +135,10 @@ print(tostring(result))
 	<tr>
 		<td class="name"  nowrap><a href="classes/IPv6.html">IPv6</a></td>
 		<td class="summary">The IPv6 Layer, inherits from <a href="classes/Base_Object.html#">Base_Object</a></td>
+	</tr>
+	<tr>
+		<td class="name"  nowrap><a href="classes/Packet.html">Packet</a></td>
+		<td class="summary">An object representing a Packet, inherits from <a href="classes/Base_Object.html#">Base_Object</a></td>
 	</tr>
 	<tr>
 		<td class="name"  nowrap><a href="classes/TCP.html">TCP</a></td>

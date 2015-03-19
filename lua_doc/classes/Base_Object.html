@@ -32,6 +32,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Fields">Fields</a></li>
 <li><a href="#Methods">Methods</a></li>
 <li><a href="#Metamethods">Metamethods</a></li>
 </ul>
@@ -42,13 +43,14 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
   <li><a href="../classes/IP.html">IP</a></li>
-  <li><strong>Base_Object</strong></li>
+  <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/FWFilter.html">FWFilter</a></li>
-  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><strong>Base_Object</strong></li>
   <li><a href="../classes/IPOption.html">IPOption</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
   <li><a href="../classes/ICMP.html">ICMP</a></li>
 </ul>
@@ -62,12 +64,20 @@
 <div id="content">
 
 <h1>Class <code>Base_Object</code></h1>
-<p>The basic methods supported by most objects</p>
+<p>Abstract type, providing the basic methods supported by most objects,
+ inherits from <a href="../classes/__cpp_obj.html#">__cpp_obj</a>.</p>
 <p>
 
 </p>
 
 
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base_Object.__tbx_baseclass">Base_Object.__tbx_baseclass</a></td>
+	<td class="summary">Get this object cpp baseclass, mostly Layer or Packet.</td>
+	</tr>
+</table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
@@ -103,6 +113,31 @@
 <br/>
 
 
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Base_Object.__tbx_baseclass"></a>
+    <strong>Base_Object.__tbx_baseclass</strong>
+    </dt>
+    <dd>
+    Get this object cpp baseclass, mostly Layer or Packet.  This is an opaque value.
+
+
+    <ul>
+        <li><span class="parameter">__tbx_baseclass</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
     <h2><a name="Methods"></a>Methods</h2>
     <dl class="function">
     <dt>
