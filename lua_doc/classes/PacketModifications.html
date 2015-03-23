@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Lua bindings for Tracebox</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+<li><a href="#Metamethods">Metamethods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
+  <li><strong>PacketModifications</strong></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>PacketModifications</code></h1>
+<p>A set of modifications between packets</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PacketModifications:new">PacketModifications:new (original, receivd)</a></td>
+	<td class="summary">Build a new PacketModifications</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PacketModifications:print">PacketModifications:print ()</a></td>
+	<td class="summary">Return the textual representation of the object.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PacketModifications:original">PacketModifications:original ()</a></td>
+	<td class="summary">Get the original packet as reference when computing these modifications</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PacketModifications:received">PacketModifications:received ()</a></td>
+	<td class="summary">Get the reveived packet differing from the original packet</td>
+	</tr>
+</table>
+<h2><a href="#Metamethods">Metamethods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PacketModifications:__tostring">PacketModifications:__tostring ()</a></td>
+	<td class="summary">Same than <a href="../classes/PacketModifications.html#PacketModifications:print">print</a></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "PacketModifications:new"></a>
+    <strong>PacketModifications:new (original, receivd)</strong>
+    </dt>
+    <dd>
+    Build a new PacketModifications
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">original</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the reference packet to compare to
+        </li>
+        <li><span class="parameter">receivd</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the new packet that has been modified
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/PacketModifications.html#">PacketModifications</a></span>
+        mod the set of modifications
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PacketModifications:print"></a>
+    <strong>PacketModifications:print ()</strong>
+    </dt>
+    <dd>
+    Return the textual representation of the object.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="http://www.lua.org/manual/5.2/manual.html#pdf-tostring">tostring</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "PacketModifications:original"></a>
+    <strong>PacketModifications:original ()</strong>
+    </dt>
+    <dd>
+    Get the original packet as reference when computing these modifications
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+        original
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PacketModifications:received"></a>
+    <strong>PacketModifications:received ()</strong>
+    </dt>
+    <dd>
+    Get the reveived packet differing from the original packet
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+        received
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Metamethods"></a>Metamethods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "PacketModifications:__tostring"></a>
+    <strong>PacketModifications:__tostring ()</strong>
+    </dt>
+    <dd>
+    Same than <a href="../classes/PacketModifications.html#PacketModifications:print">print</a>
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/PacketModifications.html#PacketModifications:print">print</a>
+    </ul>
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
