@@ -39,20 +39,22 @@
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
-  <li><a href="../classes/UDP.html">UDP</a></li>
-  <li><a href="../classes/IP.html">IP</a></li>
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
-  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
-  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
-  <li><a href="../classes/IPOption.html">IPOption</a></li>
-  <li><strong>TCPOption</strong></li>
-  <li><a href="../classes/Raw.html">Raw</a></li>
-  <li><a href="../classes/IPv6.html">IPv6</a></li>
-  <li><a href="../classes/Packet.html">Packet</a></li>
-  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/DNS.html">DNS</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
   <li><a href="../classes/ICMP.html">ICMP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><strong>TCPOption</strong></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
@@ -73,6 +75,10 @@
 <h2><a href="#Tables">Tables</a></h2>
 <table class="function_list">
 	<tr>
+	<td class="name" nowrap><a href="#TCPOption.new_args">TCPOption.new_args</a></td>
+	<td class="summary">TCPOption constructor arguments</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#TCPOption.Timestamp_args">TCPOption.Timestamp_args</a></td>
 	<td class="summary">The Timestamp Option arguments</td>
 	</tr>
@@ -87,6 +93,18 @@
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:new">TCPOption:new ([args])</a></td>
+	<td class="summary">Create a 'blank' TCPOption</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:kind">TCPOption:kind (kind)</a></td>
+	<td class="summary">Set the Option Kind</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPOption:data">TCPOption:data (data)</a></td>
+	<td class="summary">Set the Option data (raw access)</td>
+	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#TCPOption:new_nop">TCPOption:new_nop ()</a></td>
 	<td class="summary">Create a new NOP Option (Kind=1)</td>
@@ -124,12 +142,12 @@
 	<td class="summary">Create a new MPTCPCapable Option</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#TCPOption:kind">TCPOption:kind (kind)</a></td>
-	<td class="summary">Set the Option Kind</td>
+	<td class="name" nowrap><a href="#TCPOption:new_edorequest">TCPOption:new_edorequest ()</a></td>
+	<td class="summary">Create a new EDORequest Option</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#TCPOption:data">TCPOption:data (data)</a></td>
-	<td class="summary">Set the Option data (raw access)</td>
+	<td class="name" nowrap><a href="#TCPOption:new_edo">TCPOption:new_edo ()</a></td>
+	<td class="summary">Create a new EDO Option</td>
 	</tr>
 </table>
 
@@ -138,7 +156,37 @@
 
 
     <h2><a name="Tables"></a>Tables</h2>
+
     <dl class="function">
+    <dt>
+    <a name = "TCPOption.new_args"></a>
+    <strong>TCPOption.new_args</strong>
+    </dt>
+    <dd>
+    TCPOption constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">copy</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">class</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
     <dt>
     <a name = "TCPOption.Timestamp_args"></a>
     <strong>TCPOption.Timestamp_args</strong>
@@ -246,7 +294,77 @@
 </dd>
 </dl>
     <h2><a name="Methods"></a>Methods</h2>
+
     <dl class="function">
+    <dt>
+    <a name = "TCPOption:new"></a>
+    <strong>TCPOption:new ([args])</strong>
+    </dt>
+    <dd>
+    Create a 'blank' TCPOption
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         see <a href="../classes/TCPOption.html#TCPOption.new_args">new_args</a>
+ treturn TCPOption
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:kind"></a>
+    <strong>TCPOption:kind (kind)</strong>
+    </dt>
+    <dd>
+    Set the Option Kind
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">kind</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPOption:data"></a>
+    <strong>TCPOption:data (data)</strong>
+    </dt>
+    <dd>
+    Set the Option data (raw access)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">data</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
     <dt>
     <a name = "TCPOption:new_nop"></a>
     <strong>TCPOption:new_nop ()</strong>
@@ -389,6 +507,7 @@
         <li><span class="parameter">args</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
          the timestamp options, see <a href="../classes/TCPOption.html#TCPOption.Timestamp_args">Timestamp_args</a>
+         (<em>optional</em>)
         </li>
     </ul>
 
@@ -447,6 +566,7 @@
         <li><span class="parameter">the</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
          MPJoin options, see <a href="../classes/TCPOption.html#TCPOption.MPJoin_args">MPJoin_args</a>
+         (<em>optional</em>)
         </li>
     </ul>
 
@@ -476,6 +596,7 @@
         <li><span class="parameter">the</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
          MPCapable options, see <a href="../classes/TCPOption.html#TCPOption.MPCapable_args">MPCapable_args</a>
+         (<em>optional</em>)
         </li>
     </ul>
 
@@ -493,46 +614,44 @@
 
 </dd>
     <dt>
-    <a name = "TCPOption:kind"></a>
-    <strong>TCPOption:kind (kind)</strong>
+    <a name = "TCPOption:new_edorequest"></a>
+    <strong>TCPOption:new_edorequest ()</strong>
     </dt>
     <dd>
-    Set the Option Kind
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">kind</span>
-            <span class="types"><span class="type">num</span></span>
+    Create a new EDORequest Option
 
 
 
-        </li>
-    </ul>
+    <h3>Returns:</h3>
+    <ol>
 
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
+
+    </ol>
 
 
 
 
 </dd>
     <dt>
-    <a name = "TCPOption:data"></a>
-    <strong>TCPOption:data (data)</strong>
+    <a name = "TCPOption:new_edo"></a>
+    <strong>TCPOption:new_edo ()</strong>
     </dt>
     <dd>
-    Set the Option data (raw access)
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">data</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+    Create a new EDO Option
 
 
 
-        </li>
-    </ul>
+    <h3>Returns:</h3>
+    <ol>
 
+           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
+
+
+
+    </ol>
 
 
 
@@ -544,7 +663,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-04-08 17:35:43 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

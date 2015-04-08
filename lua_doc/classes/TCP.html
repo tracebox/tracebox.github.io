@@ -33,26 +33,29 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
-  <li><a href="../classes/UDP.html">UDP</a></li>
-  <li><a href="../classes/IP.html">IP</a></li>
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
-  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
-  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
-  <li><a href="../classes/IPOption.html">IPOption</a></li>
-  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
-  <li><a href="../classes/Raw.html">Raw</a></li>
-  <li><a href="../classes/IPv6.html">IPv6</a></li>
-  <li><a href="../classes/Packet.html">Packet</a></li>
-  <li><strong>TCP</strong></li>
+  <li><a href="../classes/DNS.html">DNS</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
   <li><a href="../classes/ICMP.html">ICMP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
+  <li><strong>TCP</strong></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
@@ -75,6 +78,41 @@
 	<tr>
 	<td class="name" nowrap><a href="#TCP.new_args">TCP.new_args</a></td>
 	<td class="summary">Constructor arguments</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCP.FIN">TCP.FIN</a></td>
+	<td class="summary">The TCP FIN flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.SYN">TCP.SYN</a></td>
+	<td class="summary">The TCP SYN flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.RST">TCP.RST</a></td>
+	<td class="summary">The TCP RST flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.PSH">TCP.PSH</a></td>
+	<td class="summary">The TCP PSH flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.ACK">TCP.ACK</a></td>
+	<td class="summary">The TCP ACK flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.URG">TCP.URG</a></td>
+	<td class="summary">The TCP URG flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.ECE">TCP.ECE</a></td>
+	<td class="summary">The TCP ECE flag value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCP.CWR">TCP.CWR</a></td>
+	<td class="summary">The TCP CWR flag value</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
@@ -138,6 +176,7 @@
 
 
     <h2><a name="Tables"></a>Tables</h2>
+
     <dl class="function">
     <dt>
     <a name = "TCP.new_args"></a>
@@ -181,7 +220,188 @@
 
 </dd>
 </dl>
+    <h2><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "TCP.FIN"></a>
+    <strong>TCP.FIN</strong>
+    </dt>
+    <dd>
+    The TCP FIN flag value
+
+
+    <ul>
+        <li><span class="parameter">FIN</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.SYN"></a>
+    <strong>TCP.SYN</strong>
+    </dt>
+    <dd>
+    The TCP SYN flag value
+
+
+    <ul>
+        <li><span class="parameter">SYN</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.RST"></a>
+    <strong>TCP.RST</strong>
+    </dt>
+    <dd>
+    The TCP RST flag value
+
+
+    <ul>
+        <li><span class="parameter">RST</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.PSH"></a>
+    <strong>TCP.PSH</strong>
+    </dt>
+    <dd>
+    The TCP PSH flag value
+
+
+    <ul>
+        <li><span class="parameter">PSH</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.ACK"></a>
+    <strong>TCP.ACK</strong>
+    </dt>
+    <dd>
+    The TCP ACK flag value
+
+
+    <ul>
+        <li><span class="parameter">ACK</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.URG"></a>
+    <strong>TCP.URG</strong>
+    </dt>
+    <dd>
+    The TCP URG flag value
+
+
+    <ul>
+        <li><span class="parameter">URG</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.ECE"></a>
+    <strong>TCP.ECE</strong>
+    </dt>
+    <dd>
+    The TCP ECE flag value
+
+
+    <ul>
+        <li><span class="parameter">ECE</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCP.CWR"></a>
+    <strong>TCP.CWR</strong>
+    </dt>
+    <dd>
+    The TCP CWR flag value
+
+
+    <ul>
+        <li><span class="parameter">CWR</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
     <h2><a name="Methods"></a>Methods</h2>
+
     <dl class="function">
     <dt>
     <a name = "TCP:new"></a>
@@ -196,6 +416,7 @@
         <li><span class="parameter">args</span>
             <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
          arguments, all grouped inside a table, see <a href="../classes/TCP.html#TCP.new_args">new_args</a>
+         (<em>optional</em>)
         </li>
     </ul>
 
@@ -441,6 +662,10 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">tcp:setflags(TCP.SYN + TCP.ACK)</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -469,7 +694,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-04-08 17:35:43 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
