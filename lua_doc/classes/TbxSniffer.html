@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Lua bindings for Tracebox</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/DNS.html">DNS</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><strong>TbxSniffer</strong></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>TbxSniffer</code></h1>
+<p>An object that will intercept packets</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TbxSniffer:new">TbxSniffer:new (key, cb)</a></td>
+	<td class="summary">Constructs a new TbxSniffer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TbxSniffer:sniffer_callback">TbxSniffer:sniffer_callback (pkt)</a></td>
+	<td class="summary">The callback function for the sniffer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TbxSniffer:start">TbxSniffer:start ()</a></td>
+	<td class="summary">Start sniffing and calls the callback function for each new packet.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TbxSniffer:stop">TbxSniffer:stop ()</a></td>
+	<td class="summary">Stop sniffing</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "TbxSniffer:new"></a>
+    <strong>TbxSniffer:new (key, cb)</strong>
+    </dt>
+    <dd>
+    Constructs a new TbxSniffer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         a list of arguments that will be passed to iptables
+        </li>
+        <li><span class="parameter">cb</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+         the name of a callback function, see <a href="../classes/TbxSniffer.html#TbxSniffer:sniffer_callback">sniffer_callback</a>
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TbxSniffer.html#">TbxSniffer</a></span>
+
+
+
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">TbxSniffer.new({<span class="string">'-p'</span>, <span class="string">'tcp'</span>, <span class="string">'--dport'</span>, <span class="string">'80'</span>}, callback_func)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "TbxSniffer:sniffer_callback"></a>
+    <strong>TbxSniffer:sniffer_callback (pkt)</strong>
+    </dt>
+    <dd>
+    The callback function for the sniffer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">pkt</span>
+            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
+         the received packet
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        x any value but 0 will stop the Sniffer
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TbxSniffer:start"></a>
+    <strong>TbxSniffer:start ()</strong>
+    </dt>
+    <dd>
+    Start sniffing and calls the callback function for each new packet.
+ Will never return unless <a href="../classes/TbxSniffer.html#TbxSniffer:stop">stop</a> is called from another thread
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TbxSniffer:stop"></a>
+    <strong>TbxSniffer:stop ()</strong>
+    </dt>
+    <dd>
+    Stop sniffing
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-04-08 17:35:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

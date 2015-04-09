@@ -1,0 +1,1085 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Lua bindings for Tracebox</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Methods">Methods</a></li>
+<li><a href="#Class_DNSQuery">Class DNSQuery </a></li>
+<li><a href="#Class_DNSAnswer">Class DNSAnswer </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><strong>DNS</strong></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>DNS</code></h1>
+<p>The DNS Layer</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#DNS.new_args">DNS.new_args</a></td>
+	<td class="summary">DNS Layer constructor arguments</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS.OpCode">DNS.OpCode</a></td>
+	<td class="summary">Pre-defined DNS OpCodes</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS.RCode">DNS.RCode</a></td>
+	<td class="summary">Pre-defined DNS Return Codes</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS.Type">DNS.Type</a></td>
+	<td class="summary">Pre-defined DNS Types</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS.Class">DNS.Class</a></td>
+	<td class="summary">Pre-defined DNS Class</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#DNS:new">DNS:new ([args])</a></td>
+	<td class="summary">Create a new DNS Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:add_query">DNS:add_query (query)</a></td>
+	<td class="summary">Add a query to the DNS Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:add_answer">DNS:add_answer (answer)</a></td>
+	<td class="summary">Add an answer to the DNS Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:add_authority">DNS:add_authority (authority)</a></td>
+	<td class="summary">Add an authority answer to the DNS Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:add_additional">DNS:add_additional (additional)</a></td>
+	<td class="summary">Add an answer in the additional section of the DNS Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:queries">DNS:queries ()</a></td>
+	<td class="summary">List all queries found in the Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:answers">DNS:answers ()</a></td>
+	<td class="summary">List all answers found in the Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:authority">DNS:authority ()</a></td>
+	<td class="summary">List all answers found in the Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:additional">DNS:additional ()</a></td>
+	<td class="summary">List all answers found in the Layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:id">DNS:id ()</a></td>
+	<td class="summary">Get the DNS identification value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:opcode">DNS:opcode ()</a></td>
+	<td class="summary">Get the DNS OpCode</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:rcode">DNS:rcode ()</a></td>
+	<td class="summary">Get the DNS Return Code</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:qr">DNS:qr ()</a></td>
+	<td class="summary">Get the DNS QR flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:aa">DNS:aa ()</a></td>
+	<td class="summary">Get the DNS AA flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:tc">DNS:tc ()</a></td>
+	<td class="summary">Get the DNS TC flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:rd">DNS:rd ()</a></td>
+	<td class="summary">Get the DNS RD flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:ra">DNS:ra ()</a></td>
+	<td class="summary">Get the DNS RA flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:z">DNS:z ()</a></td>
+	<td class="summary">Get the DNS Z flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:ad">DNS:ad ()</a></td>
+	<td class="summary">Get the DNS AD flag</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:cd">DNS:cd ()</a></td>
+	<td class="summary">Get the DNS CD flag</td>
+	</tr>
+</table>
+<h2><a href="#Class_DNSQuery">Class DNSQuery </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#DNS:new">DNS:new (args)</a></td>
+	<td class="summary">Create a new DNS query</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS.new_args">DNS.new_args</a></td>
+	<td class="summary">Constructor arguments</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:print">DNS:print ()</a></td>
+	<td class="summary">Get this object textual representation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:__tostring">DNS:__tostring ()</a></td>
+	<td class="summary">see <a href="../classes/DNS.html#DNS:print">print</a></td>
+	</tr>
+</table>
+<h2><a href="#Class_DNSAnswer">Class DNSAnswer </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#DNS:print">DNS:print ()</a></td>
+	<td class="summary">Get this object textual representation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DNS:__tostring">DNS:__tostring ()</a></td>
+	<td class="summary">see <a href="../classes/DNS.html#DNS:print">print</a></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "DNS.new_args"></a>
+    <strong>DNS.new_args</strong>
+    </dt>
+    <dd>
+    DNS Layer constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">num</span></span>
+         DNS identification number
+        </li>
+        <li><span class="parameter">opcode</span>
+            <span class="types"><span class="type">num</span></span>
+         see <a href="../classes/DNS.html#DNS.OpCode">OpCode</a>
+        </li>
+        <li><span class="parameter">rcode</span>
+            <span class="types"><span class="type">num</span></span>
+         see <a href="../classes/DNS.html#DNS.RCode">RCode</a>
+        </li>
+        <li><span class="parameter">qr</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">aa</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">tc</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">rd</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">ra</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">zf</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">ad</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS.OpCode"></a>
+    <strong>DNS.OpCode</strong>
+    </dt>
+    <dd>
+    Pre-defined DNS OpCodes
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">Query</span>
+
+
+
+        </li>
+        <li><span class="parameter">IQuery</span>
+
+
+
+        </li>
+        <li><span class="parameter">Status</span>
+
+
+
+        </li>
+        <li><span class="parameter">Notify</span>
+
+
+
+        </li>
+        <li><span class="parameter">Update</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">DNS.OpCode.Query</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "DNS.RCode"></a>
+    <strong>DNS.RCode</strong>
+    </dt>
+    <dd>
+    Pre-defined DNS Return Codes
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">NoError</span>
+
+
+
+        </li>
+        <li><span class="parameter">FormatError</span>
+
+
+
+        </li>
+        <li><span class="parameter">ServerFailure</span>
+
+
+
+        </li>
+        <li><span class="parameter">NameError</span>
+
+
+
+        </li>
+        <li><span class="parameter">Refused</span>
+
+
+
+        </li>
+        <li><span class="parameter">YXDomain</span>
+
+
+
+        </li>
+        <li><span class="parameter">YXRRSet</span>
+
+
+
+        </li>
+        <li><span class="parameter">NXRRSet</span>
+
+
+
+        </li>
+        <li><span class="parameter">NotAuth</span>
+
+
+
+        </li>
+        <li><span class="parameter">NotZone</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">if</span> dns:rcode() == DNS.RCode <span class="keyword">then</span> ... <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "DNS.Type"></a>
+    <strong>DNS.Type</strong>
+    </dt>
+    <dd>
+    Pre-defined DNS Types
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">A</span>
+
+
+
+        </li>
+        <li><span class="parameter">AAAA</span>
+
+
+
+        </li>
+        <li><span class="parameter">NS</span>
+
+
+
+        </li>
+        <li><span class="parameter">CNAME</span>
+
+
+
+        </li>
+        <li><span class="parameter">SOA</span>
+
+
+
+        </li>
+        <li><span class="parameter">WKS</span>
+
+
+
+        </li>
+        <li><span class="parameter">PTR</span>
+
+
+
+        </li>
+        <li><span class="parameter">MX</span>
+
+
+
+        </li>
+        <li><span class="parameter">SRV</span>
+
+
+
+        </li>
+        <li><span class="parameter">A6</span>
+
+
+
+        </li>
+        <li><span class="parameter">OPT</span>
+
+
+
+        </li>
+        <li><span class="parameter">ANY</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">DNS.Type.A</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "DNS.Class"></a>
+    <strong>DNS.Class</strong>
+    </dt>
+    <dd>
+    Pre-defined DNS Class
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">IN</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">DNS.Class.IN</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "DNS:new"></a>
+    <strong>DNS:new ([args])</strong>
+    </dt>
+    <dd>
+    Create a new DNS Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         see new_args
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/DNS.html#">DNS</a></span>
+        dns
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:add_query"></a>
+    <strong>DNS:add_query (query)</strong>
+    </dt>
+    <dd>
+    Add a query to the DNS Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">query</span>
+            <span class="types"><a class="type" href="../classes/DNS.html#DNSQuery">DNSQuery</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:add_answer"></a>
+    <strong>DNS:add_answer (answer)</strong>
+    </dt>
+    <dd>
+    Add an answer to the DNS Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">answer</span>
+            <span class="types"><a class="type" href="../classes/DNS.html#DNSAnswer">DNSAnswer</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:add_authority"></a>
+    <strong>DNS:add_authority (authority)</strong>
+    </dt>
+    <dd>
+    Add an authority answer to the DNS Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">authority</span>
+            <span class="types"><a class="type" href="../classes/DNS.html#DNSAnswer">DNSAnswer</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:add_additional"></a>
+    <strong>DNS:add_additional (additional)</strong>
+    </dt>
+    <dd>
+    Add an answer in the additional section of the DNS Layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">additional</span>
+            <span class="types"><a class="type" href="../classes/DNS.html#DNSAnswer">DNSAnswer</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:queries"></a>
+    <strong>DNS:queries ()</strong>
+    </dt>
+    <dd>
+    List all queries found in the Layer
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        queries a list of <a href="../classes/DNS.html#DNSQuery">DNSQuery</a>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:answers"></a>
+    <strong>DNS:answers ()</strong>
+    </dt>
+    <dd>
+    List all answers found in the Layer
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        answers a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:authority"></a>
+    <strong>DNS:authority ()</strong>
+    </dt>
+    <dd>
+    List all answers found in the Layer
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        authority a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:additional"></a>
+    <strong>DNS:additional ()</strong>
+    </dt>
+    <dd>
+    List all answers found in the Layer
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+        additional a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:id"></a>
+    <strong>DNS:id ()</strong>
+    </dt>
+    <dd>
+    Get the DNS identification value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        id
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:opcode"></a>
+    <strong>DNS:opcode ()</strong>
+    </dt>
+    <dd>
+    Get the DNS OpCode
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        opcode
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:rcode"></a>
+    <strong>DNS:rcode ()</strong>
+    </dt>
+    <dd>
+    Get the DNS Return Code
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        rcode
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:qr"></a>
+    <strong>DNS:qr ()</strong>
+    </dt>
+    <dd>
+    Get the DNS QR flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        qr
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:aa"></a>
+    <strong>DNS:aa ()</strong>
+    </dt>
+    <dd>
+    Get the DNS AA flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        aa
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:tc"></a>
+    <strong>DNS:tc ()</strong>
+    </dt>
+    <dd>
+    Get the DNS TC flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        tc
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:rd"></a>
+    <strong>DNS:rd ()</strong>
+    </dt>
+    <dd>
+    Get the DNS RD flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        rd
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:ra"></a>
+    <strong>DNS:ra ()</strong>
+    </dt>
+    <dd>
+    Get the DNS RA flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        ra
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:z"></a>
+    <strong>DNS:z ()</strong>
+    </dt>
+    <dd>
+    Get the DNS Z flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        z
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:ad"></a>
+    <strong>DNS:ad ()</strong>
+    </dt>
+    <dd>
+    Get the DNS AD flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        ad
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:cd"></a>
+    <strong>DNS:cd ()</strong>
+    </dt>
+    <dd>
+    Get the DNS CD flag
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        cd
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Class_DNSQuery"></a>Class DNSQuery </h2>
+
+        A DNS Query
+    <dl class="function">
+    <dt>
+    <a name = "DNS:new"></a>
+    <strong>DNS:new (args)</strong>
+    </dt>
+    <dd>
+    Create a new DNS query
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+         arguments, see <a href="../classes/DNS.html#DNS.new_args">new_args</a>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS.new_args"></a>
+    <strong>DNS.new_args</strong>
+    </dt>
+    <dd>
+    Constructor arguments
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">type</span>
+            <span class="types"><span class="type">num</span></span>
+         see <a href="../classes/DNS.html#DNS.Type">DNS.Type</a>
+        </li>
+        <li><span class="parameter">class</span>
+            <span class="types"><span class="type">num</span></span>
+         see <a href="../classes/DNS.html#DNS.Class">DNS.Class</a>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:print"></a>
+    <strong>DNS:print ()</strong>
+    </dt>
+    <dd>
+    Get this object textual representation
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:__tostring"></a>
+    <strong>DNS:__tostring ()</strong>
+    </dt>
+    <dd>
+    see <a href="../classes/DNS.html#DNS:print">print</a>
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Class_DNSAnswer"></a>Class DNSAnswer </h2>
+
+        A DNS Answer
+    <dl class="function">
+    <dt>
+    <a name = "DNS:print"></a>
+    <strong>DNS:print ()</strong>
+    </dt>
+    <dd>
+    Get this object textual representation
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DNS:__tostring"></a>
+    <strong>DNS:__tostring ()</strong>
+    </dt>
+    <dd>
+    see <a href="../classes/DNS.html#DNS:print">print</a>
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-04-08 17:35:43 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
