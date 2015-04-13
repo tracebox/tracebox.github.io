@@ -68,6 +68,7 @@
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 
@@ -392,10 +393,6 @@
 	<td class="summary">Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
-	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a></td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#wscale">wscale (the)</a></td>
 	<td class="summary">Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a></td>
 	</tr>
@@ -432,10 +429,6 @@
 	<td class="summary">A TCP MSS object defaulting to 1460 bytes</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#TS">TS</a></td>
-	<td class="summary">A default TCP Timestamp object</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#SACK">SACK (list)</a></td>
 	<td class="summary">Construct a SACK Option block, with proper padding</td>
 	</tr>
@@ -458,6 +451,14 @@
 	<tr>
 	<td class="name" nowrap><a href="#EDO">EDO</a></td>
 	<td class="summary">A default TCPOption EDO object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TS">TS</a></td>
+	<td class="summary">A default TCP Timestamp object</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#TCP">TCP</a></td>
@@ -484,10 +485,6 @@
 	<td class="summary">Construct a  TCPOption MSS, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mss">TCPOption:new_mss</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
-	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a></td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#wscale">wscale (the)</a></td>
 	<td class="summary">Construct a  TCPOption WScale, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_wscale">TCPOption:new_wscale</a></td>
 	</tr>
@@ -524,10 +521,6 @@
 	<td class="summary">A TCP MSS object defaulting to 1460 bytes</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#TS">TS</a></td>
-	<td class="summary">A default TCP Timestamp object</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#SACK">SACK (list)</a></td>
 	<td class="summary">Construct a SACK Option block, with proper padding</td>
 	</tr>
@@ -550,6 +543,14 @@
 	<tr>
 	<td class="name" nowrap><a href="#EDO">EDO</a></td>
 	<td class="summary">A default TCPOption EDO object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
+	<td class="summary">Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TS">TS</a></td>
+	<td class="summary">A default TCP Timestamp object</td>
 	</tr>
 </table>
 <h2><a href="#UDP">UDP</a></h2>
@@ -2686,42 +2687,6 @@
 
 </dd>
     <dt>
-    <a name = "timestamp"></a>
-    <strong>timestamp ([arg])</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-
-
-         (<em>optional</em>)
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-    </ul>
-
-
-</dd>
-    <dt>
     <a name = "wscale"></a>
     <strong>wscale (the)</strong>
     </dt>
@@ -2951,24 +2916,6 @@
 
 </dd>
     <dt>
-    <a name = "TS"></a>
-    <strong>TS</strong>
-    </dt>
-    <dd>
-    A default TCP Timestamp object
-
-
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-    </ul>
-
-
-</dd>
-    <dt>
     <a name = "SACK"></a>
     <strong>SACK (list)</strong>
     </dt>
@@ -3087,6 +3034,60 @@
     <h3>See also:</h3>
     <ul>
          <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "timestamp"></a>
+    <strong>timestamp ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPTimestamp.html#">TCPTimestamp</a></span>
+
+
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TS"></a>
+    <strong>TS</strong>
+    </dt>
+    <dd>
+    A default TCP Timestamp object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
     </ul>
 
 
@@ -3254,42 +3255,6 @@
 
 </dd>
     <dt>
-    <a name = "timestamp"></a>
-    <strong>timestamp ([arg])</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-
-
-         (<em>optional</em>)
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-    </ul>
-
-
-</dd>
-    <dt>
     <a name = "wscale"></a>
     <strong>wscale (the)</strong>
     </dt>
@@ -3519,24 +3484,6 @@
 
 </dd>
     <dt>
-    <a name = "TS"></a>
-    <strong>TS</strong>
-    </dt>
-    <dd>
-    A default TCP Timestamp object
-
-
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_timestamp">TCPOption:new_timestamp</a>
-    </ul>
-
-
-</dd>
-    <dt>
     <a name = "SACK"></a>
     <strong>SACK (list)</strong>
     </dt>
@@ -3655,6 +3602,60 @@
     <h3>See also:</h3>
     <ul>
          <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "timestamp"></a>
+    <strong>timestamp ([arg])</strong>
+    </dt>
+    <dd>
+    Construct a  TCPOption Timestamp, shorthand for <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPTimestamp.html#">TCPTimestamp</a></span>
+
+
+
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "TS"></a>
+    <strong>TS</strong>
+    </dt>
+    <dd>
+    A default TCP Timestamp object
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPTimestamp.html#TCPTimestamp:new">TCPTimestamp:new</a>
     </ul>
 
 
@@ -3847,7 +3848,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-04-08 17:35:43 </i>
+<i style="float:right;">Last updated 2015-04-13 15:57:56 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
