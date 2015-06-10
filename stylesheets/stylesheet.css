@@ -271,15 +271,33 @@ Full-Width Styles
   margin: 0 auto;
 }
 
-#forkme_banner {
-  display: block;
+#banner_links {
+  float: right;
   position: absolute;
   top:0;
   right: 10px;
   z-index: 10;
+}
+
+#forkme_banner {
+  display: block;
+  float: right;
   padding: 10px 50px 10px 10px;
   color: #fff;
   background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+#api_banner {
+  display: block;
+  float: right;
+  padding: 10px 85px 10px 10px;
+  color: #000;
+  /* Image under CC BY-SA 3.0, https://www.iconfinder.com/icons/532742/api_code_coding_gear_programming_settings_window_icon */
+  background: url('../images/api_small.png') #dbdbdb no-repeat 95% 50%;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;

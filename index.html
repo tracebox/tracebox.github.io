@@ -16,7 +16,10 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/tracebox">View on GitHub</a>
+            <div id="banner_links">
+                <a id="forkme_banner" href="https://github.com/tracebox">View on GitHub</a>
+                <a id="api_banner" href="http://tracebox.org/lua_doc">Lua API</a>
+            </div>
 
           <h1 id="project_title">Tracebox</h1>
           <h2 id="project_tagline">A Middlebox Detection Tool</h2>
@@ -68,7 +71,7 @@ Gregory Detal, Benjamin Hesmans, Olivier Bonaventure, Yves Vanaubel and Benoit D
 <p>Tracebox requires:</p>
 
 <ul>
-<li>The development package of libpcap, (lib)lua &gt;= 5.1.</li>
+<li>The development package of libpcap, (lib)lua &gt;= 5.1, json-c (or libjson).</li>
 <li>Automake, autoconf and libtool.</li>
 </ul>
 
@@ -86,24 +89,22 @@ $ sudo make install
 
 <pre><code># tracebox -n -p IP/TCP/MSS/MPCAPABLE/WSCALE bahn.de
 tracebox to 81.200.198.6 (bahn.de): 64 hops max
-1: 130.104.228.126 IP::CheckSum 
-2: 130.104.254.229 IP::TTL IP::CheckSum 
-3: 193.191.3.85 IP::TTL IP::CheckSum 
-4: 193.191.16.21 IP::TTL IP::CheckSum 
-5: 195.69.144.123 IP::TTL IP::CheckSum 
-6: 145.254.5.158 IP::TTL IP::CheckSum 
-7: 88.79.13.62 IP::TTL IP::CheckSum 
-8: 81.200.194.234 IP::TTL IP::CheckSum 
-9: 81.200.197.9 IP::TTL IP::CheckSum 
+1: 130.104.228.126 IP::CheckSum
+2: 130.104.254.229 IP::TTL IP::CheckSum
+3: 193.191.3.85 IP::TTL IP::CheckSum
+4: 193.191.16.21 IP::TTL IP::CheckSum
+5: 195.69.144.123 IP::TTL IP::CheckSum
+6: 145.254.5.158 IP::TTL IP::CheckSum
+7: 88.79.13.62 IP::TTL IP::CheckSum
+8: 81.200.194.234 IP::TTL IP::CheckSum
+9: 81.200.197.9 IP::TTL IP::CheckSum
 10: 81.200.198.6 TCP::CheckSum IP::TTL IP::CheckSum TCPOptionMaxSegSize::MaxSegSize -TCPOptionMPTCPCapable -TCPOptionWindowScale
 </code></pre>
-
-<p>Lua API documentation can be found at <a href="http://tracebox.org/lua_doc">http://tracebox.org/lua_doc</a>.</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Feedback or comments are welcome <a href="https://github.com/gdetal" class="user-mention">@gdetal</a></p>
+<p>Feedback or comments are welcome <a href="https://github.com/oliviertilmans" class="user-mention">@oliviertilmans</a></p>
 
 <h3>
 <a id="acknowledgment" class="anchor" href="#acknowledgment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgment</h3>
