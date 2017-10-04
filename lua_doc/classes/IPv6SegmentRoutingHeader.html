@@ -38,7 +38,7 @@
 
 
 <h2>Classes</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><a href="../classes/DNS.html">DNS</a></li>
@@ -50,16 +50,18 @@
   <li><strong>IPv6SegmentRoutingHeader</strong></li>
   <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPEDO.html">TCPEDO</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
   <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
   <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../modules/Globals.html">Globals</a></li>
 </ul>
 
@@ -121,7 +123,7 @@
 <br/>
 
 
-    <h2><a name="Tables"></a>Tables</h2>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
@@ -151,15 +153,15 @@
          the Protected flag
         </li>
         <li><span class="parameter">segments</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          See <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:setsegments">setsegments</a>
         </li>
         <li><span class="parameter">policies</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          See <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:setpolicies">setpolicies</a>
         </li>
         <li><span class="parameter">hmac</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          See <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader:sethmac">sethmac</a>
         </li>
     </ul>
@@ -170,7 +172,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Methods"></a>Methods</h2>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
@@ -184,7 +186,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">segments</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          a list IPv6Addresses (strings)
         </li>
     </ul>
@@ -194,11 +196,11 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"> srh:setsegments{
-   <span class="string">'2001:db8:1234::1'</span>,
-   <span class="string">'2001:db8:5678::1'</span>,
-   <span class="string">'2001:db8:9abc::1'</span>
- }</pre>
+        <pre class="example">srh:setsegments{
+  <span class="string">'2001:db8:1234::1'</span>,
+  <span class="string">'2001:db8:5678::1'</span>,
+  <span class="string">'2001:db8:9abc::1'</span>
+}</pre>
     </ul>
 
 </dd>
@@ -213,7 +215,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">segments</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          a list of pairs {type=num, value=string} for all 4 policies
         </li>
     </ul>
@@ -223,10 +225,10 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"> srh:setpolicies{
-   {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_destination, value=<span class="string">'2001:db8::1'</span>},
-   {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_source, value=<span class="string">'2001:db8::2'</span>},
- }</pre>
+        <pre class="example">srh:setpolicies{
+  {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_destination, value=<span class="string">'2001:db8::1'</span>},
+  {<span class="global">type</span>=IPv6SegmentRoutingHeader.policy_source, value=<span class="string">'2001:db8::2'</span>},
+}</pre>
     </ul>
 
 </dd>
@@ -241,7 +243,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">hmac</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          a list of at most 32 bytes for the HMAC value, 0-padded
         </li>
     </ul>
@@ -266,7 +268,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments, all grouped inside a table, see <a href="../classes/IPv6SegmentRoutingHeader.html#IPv6SegmentRoutingHeader.new_args">new_args</a>
          (<em>optional</em>)
         </li>
@@ -283,13 +285,13 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"> IPv6SegmentRoutingHeader.new{
-   segmentleft=<span class="number">3</span>,
-   cflag=<span class="number">1</span>,
-   segments={ <span class="string">'2001:db8::1'</span>, <span class="string">'2001:db8::2'</span> },
-   hmackey=<span class="number">4</span>,
-   hmac={ <span class="number">0xe</span>, <span class="number">0xa</span>, <span class="number">0x12</span> } <span class="comment">-- will be 0-padded
-</span> }</pre>
+        <pre class="example">IPv6SegmentRoutingHeader.new{
+  segmentleft=<span class="number">3</span>,
+  cflag=<span class="number">1</span>,
+  segments={ <span class="string">'2001:db8::1'</span>, <span class="string">'2001:db8::2'</span> },
+  hmackey=<span class="number">4</span>,
+  hmac={ <span class="number">0xe</span>, <span class="number">0xa</span>, <span class="number">0x12</span> } <span class="comment">-- will be 0-padded
+</span>}</pre>
     </ul>
 
 </dd>
@@ -355,8 +357,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-05-04 17:26:47 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

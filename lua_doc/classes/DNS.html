@@ -40,7 +40,7 @@
 
 
 <h2>Classes</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><strong>DNS</strong></li>
@@ -52,16 +52,18 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPEDO.html">TCPEDO</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
   <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
   <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../modules/Globals.html">Globals</a></li>
 </ul>
 
@@ -217,7 +219,7 @@
 <br/>
 
 
-    <h2><a name="Tables"></a>Tables</h2>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
@@ -516,7 +518,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Methods"></a>Methods</h2>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
@@ -530,7 +532,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          see new_args
          (<em>optional</em>)
         </li>
@@ -651,7 +653,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         queries a list of <a href="../classes/DNS.html#DNSQuery">DNSQuery</a>
     </ol>
 
@@ -671,7 +673,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         answers a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
     </ol>
 
@@ -691,7 +693,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         authority a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
     </ol>
 
@@ -711,7 +713,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         additional a list of <a href="../classes/DNS.html#DNSAnswer">DNSAnswer</a>
     </ol>
 
@@ -940,9 +942,11 @@
 
 </dd>
 </dl>
-    <h2><a name="Class_DNSQuery"></a>Class DNSQuery </h2>
+    <h2 class="section-header has-description"><a name="Class_DNSQuery"></a>Class DNSQuery </h2>
 
-        A DNS Query
+          <div class="section-description">
+          A DNS Query
+          </div>
     <dl class="function">
     <dt>
     <a name = "DNS:new"></a>
@@ -955,7 +959,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments, see <a href="../classes/DNS.html#DNS.new_args">new_args</a>
         </li>
     </ul>
@@ -976,7 +980,7 @@
     <h3>Fields:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -1008,7 +1012,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -1033,9 +1037,11 @@
 
 </dd>
 </dl>
-    <h2><a name="Class_DNSAnswer"></a>Class DNSAnswer </h2>
+    <h2 class="section-header has-description"><a name="Class_DNSAnswer"></a>Class DNSAnswer </h2>
 
-        A DNS Answer
+          <div class="section-description">
+          A DNS Answer
+          </div>
     <dl class="function">
     <dt>
     <a name = "DNS:print"></a>
@@ -1049,7 +1055,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -1079,8 +1085,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-05-04 17:26:47 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

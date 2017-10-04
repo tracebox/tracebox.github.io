@@ -32,7 +32,6 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Metamethods">Metamethods</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
@@ -42,7 +41,7 @@
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><a href="../classes/DNS.html">DNS</a></li>
-  <li><strong>FWFilter</strong></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
   <li><a href="../classes/ICMP.html">ICMP</a></li>
   <li><a href="../classes/IP.html">IP</a></li>
   <li><a href="../classes/IPOption.html">IPOption</a></li>
@@ -50,7 +49,7 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
-  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
+  <li><strong>PartialTCP</strong></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
@@ -69,23 +68,25 @@
 
 <div id="content">
 
-<h1>Class <code>FWFilter</code></h1>
-<p>A simple firewall rule on the host machine.</p>
-<p> Create one with <a href="../modules/Globals.html#filter">Globals.filter</a></p>
+<h1>Class <code>PartialTCP</code></h1>
+<p>The PartialTCP Layer, inherits from <a href="../classes/Base_Object.html#">Base_Object</a>
+ This denotes a embedded TCP layer in an ICMP payload that has been cut.</p>
+<p> As such, it cannot be constructed directly.</p>
 
 
-<h2><a href="#Metamethods">Metamethods</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#FWFilter:__gc">FWFilter:__gc ()</a></td>
-	<td class="summary">Same than <a href="../classes/FWFilter.html#FWFilter:close">close</a></td>
-	</tr>
-</table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#FWFilter:close">FWFilter:close ()</a></td>
-	<td class="summary">Close the Firewall</td>
+	<td class="name" nowrap><a href="#PartialTCP:getsource">PartialTCP:getsource ()</a></td>
+	<td class="summary">Get the TCP source port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PartialTCP:getdst">PartialTCP:getdst ()</a></td>
+	<td class="summary">Get the TCP destination port</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PartialTCP:getseq">PartialTCP:getseq ()</a></td>
+	<td class="summary">Get the TCP sequence number</td>
 	</tr>
 </table>
 
@@ -93,37 +94,43 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Metamethods"></a>Metamethods</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "FWFilter:__gc"></a>
-    <strong>FWFilter:__gc ()</strong>
-    </dt>
-    <dd>
-    Same than <a href="../classes/FWFilter.html#FWFilter:close">close</a>
-
-
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/FWFilter.html#FWFilter:close">close</a>
-    </ul>
-
-
-</dd>
-</dl>
     <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
-    <a name = "FWFilter:close"></a>
-    <strong>FWFilter:close ()</strong>
+    <a name = "PartialTCP:getsource"></a>
+    <strong>PartialTCP:getsource ()</strong>
     </dt>
     <dd>
-    Close the Firewall
+    Get the TCP source port
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PartialTCP:getdst"></a>
+    <strong>PartialTCP:getdst ()</strong>
+    </dt>
+    <dd>
+    Get the TCP destination port
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PartialTCP:getseq"></a>
+    <strong>PartialTCP:getseq ()</strong>
+    </dt>
+    <dd>
+    Get the TCP sequence number
 
 
 

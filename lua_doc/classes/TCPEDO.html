@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Lua bindings for Tracebox</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Tracebox</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Class_TCPEDO">Class TCPEDO </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
+  <li><a href="../classes/Base_Object.html">Base_Object</a></li>
+  <li><a href="../classes/DNS.html">DNS</a></li>
+  <li><a href="../classes/FWFilter.html">FWFilter</a></li>
+  <li><a href="../classes/ICMP.html">ICMP</a></li>
+  <li><a href="../classes/IP.html">IP</a></li>
+  <li><a href="../classes/IPOption.html">IPOption</a></li>
+  <li><a href="../classes/IPv6.html">IPv6</a></li>
+  <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
+  <li><a href="../classes/Packet.html">Packet</a></li>
+  <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
+  <li><a href="../classes/Raw.html">Raw</a></li>
+  <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
+  <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><strong>TCPEDO</strong></li>
+  <li><a href="../classes/TCPOption.html">TCPOption</a></li>
+  <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
+  <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
+  <li><a href="../classes/UDP.html">UDP</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/Globals.html">Globals</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>TCPEDO</code></h1>
+<p>The TCP Edo option</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Class_TCPEDO">Class TCPEDO </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO:length">TCPEDO:length ([length])</a></td>
+	<td class="summary">Get/Set the Length field in the edo option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO:headerlength">TCPEDO:headerlength ()</a></td>
+	<td class="summary">Get the Header Length field in the edo option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO:segmentlength">TCPEDO:segmentlength ()</a></td>
+	<td class="summary">Get the Segment Length field in the edo option</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO.EDOREQUEST">TCPEDO.EDOREQUEST</a></td>
+	<td class="summary">The edo request, 2 bytes long, to be used in the SYN(+ACK) negociation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO.EDO">TCPEDO.EDO</a></td>
+	<td class="summary">The edo option, 4 bytes long, containing the header length field</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO.EDOEXT">TCPEDO.EDOEXT</a></td>
+	<td class="summary">The edo option, 6 bytes long, containing the header length and segment length fields</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TCPEDO:new">TCPEDO:new ([length])</a></td>
+	<td class="summary">Create a new EDO Option</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Class_TCPEDO"></a>Class TCPEDO </h2>
+
+          <div class="section-description">
+          The TCP EDO Option
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "TCPEDO:length"></a>
+    <strong>TCPEDO:length ([length])</strong>
+    </dt>
+    <dd>
+    Get/Set the Length field in the edo option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">length</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        length
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO:headerlength"></a>
+    <strong>TCPEDO:headerlength ()</strong>
+    </dt>
+    <dd>
+    Get the Header Length field in the edo option
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        length The 'real' number of internet words of the TCP header
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO:segmentlength"></a>
+    <strong>TCPEDO:segmentlength ()</strong>
+    </dt>
+    <dd>
+    Get the Segment Length field in the edo option
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">num</span></span>
+        length number of bytes in the TCP segment
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO.EDOREQUEST"></a>
+    <strong>TCPEDO.EDOREQUEST</strong>
+    </dt>
+    <dd>
+    The edo request, 2 bytes long, to be used in the SYN(+ACK) negociation
+
+
+    <ul>
+        <li><span class="parameter">EDOREQUEST</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO.EDO"></a>
+    <strong>TCPEDO.EDO</strong>
+    </dt>
+    <dd>
+    The edo option, 4 bytes long, containing the header length field
+
+
+    <ul>
+        <li><span class="parameter">EDO</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO.EDOEXT"></a>
+    <strong>TCPEDO.EDOEXT</strong>
+    </dt>
+    <dd>
+    The edo option, 6 bytes long, containing the header length and segment length fields
+
+
+    <ul>
+        <li><span class="parameter">EDOEXT</span>
+            <span class="types"><span class="type">num</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TCPEDO:new"></a>
+    <strong>TCPEDO:new ([length])</strong>
+    </dt>
+    <dd>
+    Create a new EDO Option
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">length</span>
+            <span class="types"><span class="type">num</span></span>
+         the size of the EDO option, use one of the constants
+ defined as field in this class: <a href="../classes/TCPEDO.html#TCPEDO.EDOREQUEST">EDOREQUEST</a>, <a href="../classes/TCPEDO.html#TCPEDO.EDO">EDO</a>, <a href="../classes/TCPEDO.html#TCPEDO.EDOEXT">EDOEXT</a>
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPEDO.html#">TCPEDO</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

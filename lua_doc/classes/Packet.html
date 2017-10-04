@@ -38,7 +38,7 @@
 
 
 <h2>Classes</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><a href="../classes/DNS.html">DNS</a></li>
@@ -50,16 +50,18 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><strong>Packet</strong></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPEDO.html">TCPEDO</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
   <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
   <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../modules/Globals.html">Globals</a></li>
 </ul>
 
@@ -108,8 +110,17 @@
 	<td class="summary">Get the list of bytes contained in this packet</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#Packet:ts">Packet:ts ()</a></td>
+	<td class="summary">Get the timestamp associated with this packet:
+ the time at which it was last sent or received)</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#Packet:get">Packet:get (similar)</a></td>
-	<td class="summary">Get a layer matching the given one</td>
+	<td class="summary">Get the layer matching the given one</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Packet:get">Packet:get (similar)</a></td>
+	<td class="summary">Get all layers matching the given one</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Packet:iplayer">Packet:iplayer ()</a></td>
@@ -150,7 +161,7 @@
 <br/>
 
 
-    <h2><a name="Tables"></a>Tables</h2>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
@@ -176,7 +187,7 @@
 
         </li>
         <li><span class="parameter">interface</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 <p> force the outgoing interface, instead of using the</p>
 <pre><code>default interface for the destination address
@@ -191,7 +202,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Methods"></a>Methods</h2>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
@@ -206,7 +217,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         IP address
     </ol>
 
@@ -226,7 +237,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         IP address
     </ol>
 
@@ -265,7 +276,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table containing the optional arguments, see <a href="../classes/Packet.html#Packet.sendrecv_args">sendrecv_args</a>
          (<em>optional</em>)
         </li>
@@ -294,7 +305,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">interface</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 <p> force the outgoing interface, instead of using the</p>
 <pre><code>default interface for the destination address
@@ -321,9 +332,30 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         bytes a list of numbers [0-255] denoting the value of each
  byte in the packet
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Packet:ts"></a>
+    <strong>Packet:ts ()</strong>
+    </dt>
+    <dd>
+    Get the timestamp associated with this packet:
+ the time at which it was last sent or received)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">the</span></span>
+        timestamp in usec
     </ol>
 
 
@@ -335,7 +367,7 @@
     <strong>Packet:get (similar)</strong>
     </dt>
     <dd>
-    Get a layer matching the given one
+    Get the layer matching the given one
 
 
     <h3>Parameters:</h3>
@@ -361,6 +393,35 @@
     <ul>
         <pre class="example"><span class="keyword">local</span> real_tcp = pkt:get(TCP)</pre>
     </ul>
+
+</dd>
+    <dt>
+    <a name = "Packet:get"></a>
+    <strong>Packet:get (similar)</strong>
+    </dt>
+    <dd>
+    Get all layers matching the given one
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">similar</span>
+            <span class="types"><span class="type">Base_Object</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+        layers the corresponding list of layers or an empty table
+    </ol>
+
+
+
 
 </dd>
     <dt>
@@ -530,8 +591,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-05-04 17:26:47 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

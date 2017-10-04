@@ -33,6 +33,7 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
 <li><a href="#Fields">Fields</a></li>
 <li><a href="#"> </a></li>
 <li><a href="#Layers">Layers</a></li>
@@ -48,11 +49,11 @@
 
 
 <h2>Modules</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><strong>Globals</strong></li>
 </ul>
 <h2>Classes</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><a href="../classes/DNS.html">DNS</a></li>
@@ -64,9 +65,11 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPEDO.html">TCPEDO</a></li>
   <li><a href="../classes/TCPOption.html">TCPOption</a></li>
   <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
   <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
@@ -95,13 +98,17 @@
 	<td class="summary">Create a firewall rule to open ports on the host machine.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#tracebox_callback">tracebox_callback (ttl, r_ip, probe, rcv, mod)</a></td>
+	<td class="name" nowrap><a href="#tracebox_callback">tracebox_callback (ttl, r_ip, mod)</a></td>
 	<td class="summary">Callback function type, to be provided as argument to tracebox</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#tracebox">tracebox (pkt[, args])</a></td>
 	<td class="summary">Start sending the packet with increasing TTL values and compute the
  differences</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_ttl_range">set_ttl_range (args)</a></td>
+	<td class="summary">Set a new TTL range for further tracebox calls</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#sleep">sleep (the)</a></td>
@@ -118,6 +125,17 @@
 	<tr>
 	<td class="name" nowrap><a href="#gethostname">gethostname (an)</a></td>
 	<td class="summary">Attempt to map the given IP address to a domain name</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#tracebox_args">tracebox_args</a></td>
+	<td class="summary">Tracebox optional keyword parameters</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_ttl_range_args">set_ttl_range_args</a></td>
+	<td class="summary">Parameters for set<em>ttl</em>range</td>
 	</tr>
 </table>
 <h2><a href="#Fields">Fields</a></h2>
@@ -280,11 +298,11 @@
 	<td class="summary">Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="name" nowrap><a href="#IP_NOP">IP_NOP</a></td>
 	<td class="summary">A default IP NOP object</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="name" nowrap><a href="#IP_EOL">IP_EOL</a></td>
 	<td class="summary">A default IP EOL object</td>
 	</tr>
 	<tr>
@@ -328,11 +346,11 @@
 	<td class="summary">Construct an IPOption Traceroute, shorthand for <a href="../classes/IPOption.html#IPOption:new_traceroute">IPOption:new_traceroute</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#NOP">NOP</a></td>
+	<td class="name" nowrap><a href="#IP_NOP">IP_NOP</a></td>
 	<td class="summary">A default IP NOP object</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#EOL">EOL</a></td>
+	<td class="name" nowrap><a href="#IP_EOL">IP_EOL</a></td>
 	<td class="summary">A default IP EOL object</td>
 	</tr>
 	<tr>
@@ -406,14 +424,6 @@
 	<td class="summary">Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#edorequest">edorequest ()</a></td>
-	<td class="summary">Construct a  TCPOption EDORequest, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#edo">edo ()</a></td>
-	<td class="summary">Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a></td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#NOP">NOP</a></td>
 	<td class="summary">A default TCP NOP object</td>
 	</tr>
@@ -446,12 +456,22 @@
 	<td class="summary">A default TCPOption MPjoin object</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#EDOREQUEST">EDOREQUEST</a></td>
-	<td class="summary">A default TCPOption EDORequest object</td>
+	<td class="name" nowrap><a href="#edo">edo ()</a></td>
+	<td class="summary">Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a></td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#EDO">EDO</a></td>
-	<td class="summary">A default TCPOption EDO object</td>
+	<td class="summary">A TCPEDO option that will contain the header length field</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EDOREQUEST">EDOREQUEST</a></td>
+	<td class="summary">A TCPEDO option to be used during the handshake negociation,
+ requires padding (length is 2 bytes)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EDOEXT">EDOEXT</a></td>
+	<td class="summary">A TCPEDO option containing the header length and the segment length,
+ requires padding (length is 6 bytes)</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
@@ -506,14 +526,6 @@
 	<td class="summary">Construct a  TCPOption MPJoin, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a></td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#edorequest">edorequest ()</a></td>
-	<td class="summary">Construct a  TCPOption EDORequest, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a></td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#edo">edo ()</a></td>
-	<td class="summary">Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a></td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#NOP">NOP</a></td>
 	<td class="summary">A default TCP NOP object</td>
 	</tr>
@@ -546,12 +558,22 @@
 	<td class="summary">A default TCPOption MPjoin object</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#EDOREQUEST">EDOREQUEST</a></td>
-	<td class="summary">A default TCPOption EDORequest object</td>
+	<td class="name" nowrap><a href="#edo">edo ()</a></td>
+	<td class="summary">Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a></td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#EDO">EDO</a></td>
-	<td class="summary">A default TCPOption EDO object</td>
+	<td class="summary">A TCPEDO option that will contain the header length field</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EDOREQUEST">EDOREQUEST</a></td>
+	<td class="summary">A TCPEDO option to be used during the handshake negociation,
+ requires padding (length is 2 bytes)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#EDOEXT">EDOEXT</a></td>
+	<td class="summary">A TCPEDO option containing the header length and the segment length,
+ requires padding (length is 6 bytes)</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#timestamp">timestamp ([arg])</a></td>
@@ -605,17 +627,13 @@
 	<td class="name" nowrap><a href="#__dump_c_stack">__dump_c_stack ()</a></td>
 	<td class="summary">Return a string containing the content of the lua C stack</td>
 	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#__cpp_object_count">__cpp_object_count ()</a></td>
-	<td class="summary">Return the number of objects that are referenced</td>
-	</tr>
 </table>
 
 <br/>
 <br/>
 
 
-    <h2><a name="Functions"></a>Functions</h2>
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
 
     <dl class="function">
     <dt>
@@ -649,7 +667,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) <span class="comment">-- Will open port 53 on the host machine</span></pre>
     </ul>
 
 </dd>
@@ -684,13 +702,13 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) -- Will open port <span class="number">53</span> on the host machine</pre>
+        <pre class="example">filter(IP / UDP{src=<span class="number">53</span>}) <span class="comment">-- Will open port 53 on the host machine</span></pre>
     </ul>
 
 </dd>
     <dt>
     <a name = "tracebox_callback"></a>
-    <strong>tracebox_callback (ttl, r_ip, probe, rcv, mod)</strong>
+    <strong>tracebox_callback (ttl, r_ip, mod)</strong>
     </dt>
     <dd>
     Callback function type, to be provided as argument to tracebox
@@ -703,16 +721,8 @@
          the current TTL value
         </li>
         <li><span class="parameter">r_ip</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          the ip of the router that echoed the probe
-        </li>
-        <li><span class="parameter">probe</span>
-            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-         the probe packet
-        </li>
-        <li><span class="parameter">rcv</span>
-            <span class="types"><a class="type" href="../classes/Packet.html#">Packet</a></span>
-         the echoed packet
         </li>
         <li><span class="parameter">mod</span>
             <span class="types"><a class="type" href="../classes/PacketModifications.html#">PacketModifications</a></span>
@@ -735,11 +745,9 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">
- <span class="keyword">function</span> callback_func(ttl, r_ip, probe, rcv, mod)
- 	<span class="global">print</span>(<span class="string">"Sent probe n#"</span> .. tll)
- <span class="keyword">end</span>
- </pre>
+        <pre class="example"><span class="keyword">function</span> callback_func(ttl, r_ip, mod)
+	<span class="global">print</span>(<span class="string">"Sent probe n#"</span> .. tll .. <span class="string">" and received "</span> .. mod:modif():<span class="global">tostring</span>())
+<span class="keyword">end</span></pre>
     </ul>
 
 </dd>
@@ -759,8 +767,8 @@
          the probe packet
         </li>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-         a table with the name of a callback function at key 'callback'
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         see tracebox_args
          (<em>optional</em>)
         </li>
     </ul>
@@ -782,6 +790,33 @@
     <ul>
         <pre class="example">tracebox(IP/TCP, { callback = <span class="string">'callback_func'</span>})</pre>
     </ul>
+
+</dd>
+    <dt>
+    <a name = "set_ttl_range"></a>
+    <strong>set_ttl_range (args)</strong>
+    </dt>
+    <dd>
+    Set a new TTL range for further tracebox calls
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         see set<em>ttl</em>range_args
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+        The old TTL table
+    </ol>
+
+
+
 
 </dd>
     <dt>
@@ -816,7 +851,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">a</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          domain name. If it is an IP address, does nothing
         </li>
     </ul>
@@ -824,7 +859,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         the corresponding IPv6 address, or nil if the call failed
     </ol>
 
@@ -843,7 +878,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">a</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          domain name. If it is an IP address, does nothing
         </li>
     </ul>
@@ -851,7 +886,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         the corresponding IPv4 address, or nil if the call failed
     </ol>
 
@@ -870,7 +905,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">an</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          IP address, does nothing on domain names
         </li>
     </ul>
@@ -878,7 +913,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         the corresponding IP address, either v4 or v6
     </ol>
 
@@ -887,7 +922,57 @@
 
 </dd>
 </dl>
-    <h2><a name="Fields"></a>Fields</h2>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "tracebox_args"></a>
+    <strong>tracebox_args</strong>
+    </dt>
+    <dd>
+    Tracebox optional keyword parameters
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The callback function to call at each received probe, see tracebox_callback
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_ttl_range_args"></a>
+    <strong>set_ttl_range_args</strong>
+    </dt>
+    <dd>
+    Parameters for set<em>ttl</em>range
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">min_ttl</span>
+            <span class="types"><span class="type">num</span></span>
+         The minimal probe TTL
+        </li>
+        <li><span class="parameter">max_ttl</span>
+            <span class="types"><span class="type">num</span></span>
+         The maximal probe TTL
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
 
     <dl class="function">
     <dt>
@@ -914,21 +999,20 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"> tracebox -l <span class="string">"print(#argv)"</span> Hello <span class="string">" "</span> \<span class="string">" Worl "</span>d
+        <pre class="example">tracebox -l <span class="string">"print(#argv)"</span> Hello <span class="string">" "</span> \<span class="string">" Worl "</span>d
 
- 	Will <span class="global">print</span> <span class="number">4</span>, as there are five arguments:
- 		<span class="number">1.</span> Hello
- 		<span class="number">2.</span> <span class="string">" "</span> (without the quotes)
- 		<span class="number">3.</span> " (an actual quote)
- 		<span class="number">4.</span> Worl
- 		<span class="number">5.</span> d (quote was there only to fix hilighting ...)
- 	Escape-rules depends on your shell.</pre>
+	Will <span class="global">print</span> <span class="number">4</span>, as there are five arguments:
+		<span class="number">1.</span> Hello
+		<span class="number">2.</span> <span class="string">" "</span> (without the quotes)
+		<span class="number">3.</span> " (an actual quote)
+		<span class="number">4.</span> Worl
+		<span class="number">5.</span> d (quote was there only to fix hilighting ...)
+	Escape-rules depends on your shell.</pre>
     </ul>
 
 </dd>
 </dl>
-    <h2><a name=""></a> </h2>
-
+    <h2 class="section-header "><a name=""></a> </h2>
 
     <dl class="function">
     <dt>
@@ -942,7 +1026,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -973,7 +1057,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -994,7 +1078,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Layers"></a>Layers</h2>
+    <h2 class="section-header "><a name="Layers"></a>Layers</h2>
 
     <dl class="function">
     <dt>
@@ -1008,7 +1092,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1040,7 +1124,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1072,7 +1156,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1104,7 +1188,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1136,7 +1220,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1168,7 +1252,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1200,7 +1284,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1232,7 +1316,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1264,7 +1348,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1296,7 +1380,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1328,7 +1412,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1360,7 +1444,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1392,7 +1476,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1424,7 +1508,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments
          (<em>optional</em>)
         </li>
@@ -1446,7 +1530,7 @@
 
 </dd>
 </dl>
-    <h2><a name="ICMP"></a>ICMP</h2>
+    <h2 class="section-header "><a name="ICMP"></a>ICMP</h2>
 
     <dl class="function">
     <dt>
@@ -1567,7 +1651,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addr</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          the address for the redirection
         </li>
     </ul>
@@ -1719,7 +1803,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addr</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          the address for the redirection
         </li>
     </ul>
@@ -1754,7 +1838,7 @@
 
 </dd>
 </dl>
-    <h2><a name="IP"></a>IP</h2>
+    <h2 class="section-header "><a name="IP"></a>IP</h2>
 
     <dl class="function">
     <dt>
@@ -1871,7 +1955,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -1904,7 +1988,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -1937,7 +2021,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">src</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Original IP
         </li>
     </ul>
@@ -1960,8 +2044,8 @@
 
 </dd>
     <dt>
-    <a name = "NOP"></a>
-    <strong>NOP</strong>
+    <a name = "IP_NOP"></a>
+    <strong>IP_NOP</strong>
     </dt>
     <dd>
     A default IP NOP object
@@ -1978,8 +2062,8 @@
 
 </dd>
     <dt>
-    <a name = "EOL"></a>
-    <strong>EOL</strong>
+    <a name = "IP_EOL"></a>
+    <strong>IP_EOL</strong>
     </dt>
     <dd>
     A default IP EOL object
@@ -2039,7 +2123,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -2072,7 +2156,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPS
         </li>
     </ul>
@@ -2208,7 +2292,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -2241,7 +2325,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -2274,7 +2358,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">src</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Original IP
         </li>
     </ul>
@@ -2297,8 +2381,8 @@
 
 </dd>
     <dt>
-    <a name = "NOP"></a>
-    <strong>NOP</strong>
+    <a name = "IP_NOP"></a>
+    <strong>IP_NOP</strong>
     </dt>
     <dd>
     A default IP NOP object
@@ -2315,8 +2399,8 @@
 
 </dd>
     <dt>
-    <a name = "EOL"></a>
-    <strong>EOL</strong>
+    <a name = "IP_EOL"></a>
+    <strong>IP_EOL</strong>
     </dt>
     <dd>
     A default IP EOL object
@@ -2376,7 +2460,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPs
         </li>
     </ul>
@@ -2409,7 +2493,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">addrs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of IPS
         </li>
     </ul>
@@ -2432,7 +2516,7 @@
 
 </dd>
 </dl>
-    <h2><a name="IPv6"></a>IPv6</h2>
+    <h2 class="section-header "><a name="IPv6"></a>IPv6</h2>
 
     <dl class="function">
     <dt>
@@ -2464,7 +2548,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">segs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          a list of segments
         </li>
     </ul>
@@ -2515,7 +2599,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">segs</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          a list of segments
         </li>
     </ul>
@@ -2538,7 +2622,7 @@
 
 </dd>
 </dl>
-    <h2><a name="TCP"></a>TCP</h2>
+    <h2 class="section-header "><a name="TCP"></a>TCP</h2>
 
     <dl class="function">
     <dt>
@@ -2648,7 +2732,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          of pairs of number, will attempt to group them 2-by-2 or flatten sublists
         </li>
     </ul>
@@ -2747,7 +2831,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -2783,7 +2867,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -2804,58 +2888,6 @@
     <h3>See also:</h3>
     <ul>
          <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "edorequest"></a>
-    <strong>edorequest ()</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption EDORequest, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "edo"></a>
-    <strong>edo ()</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
     </ul>
 
 
@@ -2943,7 +2975,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          of pairs
         </li>
     </ul>
@@ -3020,19 +3052,27 @@
 
 </dd>
     <dt>
-    <a name = "EDOREQUEST"></a>
-    <strong>EDOREQUEST</strong>
+    <a name = "edo"></a>
+    <strong>edo ()</strong>
     </dt>
     <dd>
-    A default TCPOption EDORequest object
+    Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
 
 
 
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPEDO.html#">TCPEDO</a></span>
+
+
+
+    </ol>
 
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
     </ul>
 
 
@@ -3042,7 +3082,7 @@
     <strong>EDO</strong>
     </dt>
     <dd>
-    A default TCPOption EDO object
+    A TCPEDO option that will contain the header length field
 
 
 
@@ -3050,7 +3090,45 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EDOREQUEST"></a>
+    <strong>EDOREQUEST</strong>
+    </dt>
+    <dd>
+    A TCPEDO option to be used during the handshake negociation,
+ requires padding (length is 2 bytes)
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EDOEXT"></a>
+    <strong>EDOEXT</strong>
+    </dt>
+    <dd>
+    A TCPEDO option containing the header length and the segment length,
+ requires padding (length is 6 bytes)
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
     </ul>
 
 
@@ -3066,7 +3144,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3120,7 +3198,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cookie</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3270,7 +3348,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          of pairs of number, will attempt to group them 2-by-2 or flatten sublists
         </li>
     </ul>
@@ -3369,7 +3447,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3405,7 +3483,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3426,58 +3504,6 @@
     <h3>See also:</h3>
     <ul>
          <a href="../classes/TCPOption.html#TCPOption:new_mpjoin">TCPOption:new_mpjoin</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "edorequest"></a>
-    <strong>edorequest ()</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption EDORequest, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "edo"></a>
-    <strong>edo ()</strong>
-    </dt>
-    <dd>
-    Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
     </ul>
 
 
@@ -3565,7 +3591,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          of pairs
         </li>
     </ul>
@@ -3642,19 +3668,27 @@
 
 </dd>
     <dt>
-    <a name = "EDOREQUEST"></a>
-    <strong>EDOREQUEST</strong>
+    <a name = "edo"></a>
+    <strong>edo ()</strong>
     </dt>
     <dd>
-    A default TCPOption EDORequest object
+    Construct a  TCPOption EDO, shorthand for <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
 
 
 
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/TCPEDO.html#">TCPEDO</a></span>
+
+
+
+    </ol>
 
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edorequest">TCPOption:new_edorequest</a>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
     </ul>
 
 
@@ -3664,7 +3698,7 @@
     <strong>EDO</strong>
     </dt>
     <dd>
-    A default TCPOption EDO object
+    A TCPEDO option that will contain the header length field
 
 
 
@@ -3672,7 +3706,45 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/TCPOption.html#TCPOption:new_edo">TCPOption:new_edo</a>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EDOREQUEST"></a>
+    <strong>EDOREQUEST</strong>
+    </dt>
+    <dd>
+    A TCPEDO option to be used during the handshake negociation,
+ requires padding (length is 2 bytes)
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "EDOEXT"></a>
+    <strong>EDOEXT</strong>
+    </dt>
+    <dd>
+    A TCPEDO option containing the header length and the segment length,
+ requires padding (length is 6 bytes)
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/TCPEDO.html#TCPEDO:new">TCPEDO:new</a>
     </ul>
 
 
@@ -3688,7 +3760,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3742,7 +3814,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cookie</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
 
 
 
@@ -3786,7 +3858,7 @@
 
 </dd>
 </dl>
-    <h2><a name="UDP"></a>UDP</h2>
+    <h2 class="section-header "><a name="UDP"></a>UDP</h2>
 
     <dl class="function">
     <dt>
@@ -3826,7 +3898,7 @@
 
 </dd>
 </dl>
-    <h2><a name="TbxSniffer"></a>TbxSniffer</h2>
+    <h2 class="section-header "><a name="TbxSniffer"></a>TbxSniffer</h2>
 
     <dl class="function">
     <dt>
@@ -3840,7 +3912,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">key</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          the Sniffing key
         </li>
         <li><span class="parameter">cb</span>
@@ -3869,7 +3941,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">key</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          the Sniffing key
         </li>
         <li><span class="parameter">cb</span>
@@ -3888,8 +3960,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Set_of_functions_to_help_debugging_the_bindings"></a>Set of functions to help debugging the bindings </h2>
-
+    <h2 class="section-header "><a name="Set_of_functions_to_help_debugging_the_bindings"></a>Set of functions to help debugging the bindings </h2>
 
     <dl class="function">
     <dt>
@@ -3923,7 +3994,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Debugging"></a>Debugging</h2>
+    <h2 class="section-header "><a name="Debugging"></a>Debugging</h2>
 
     <dl class="function">
     <dt>
@@ -3938,28 +4009,8 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         the content of the C stack
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "__cpp_object_count"></a>
-    <strong>__cpp_object_count ()</strong>
-    </dt>
-    <dd>
-    Return the number of objects that are referenced
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">num</span></span>
-        object_count
     </ol>
 
 
@@ -3972,8 +4023,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-05-04 17:26:47 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

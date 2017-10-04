@@ -38,7 +38,7 @@
 
 
 <h2>Classes</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../classes/__cpp_obj.html">__cpp_obj</a></li>
   <li><a href="../classes/Base_Object.html">Base_Object</a></li>
   <li><a href="../classes/DNS.html">DNS</a></li>
@@ -50,16 +50,18 @@
   <li><a href="../classes/IPv6SegmentRoutingHeader.html">IPv6SegmentRoutingHeader</a></li>
   <li><a href="../classes/Packet.html">Packet</a></li>
   <li><a href="../classes/PacketModifications.html">PacketModifications</a></li>
+  <li><a href="../classes/PartialTCP.html">PartialTCP</a></li>
   <li><a href="../classes/Raw.html">Raw</a></li>
   <li><a href="../classes/TbxSniffer.html">TbxSniffer</a></li>
   <li><a href="../classes/TCP.html">TCP</a></li>
+  <li><a href="../classes/TCPEDO.html">TCPEDO</a></li>
   <li><strong>TCPOption</strong></li>
   <li><a href="../classes/TCPTFO.html">TCPTFO</a></li>
   <li><a href="../classes/TCPTimestamp.html">TCPTimestamp</a></li>
   <li><a href="../classes/UDP.html">UDP</a></li>
 </ul>
 <h2>Modules</h2>
-<ul class="$(kind=='Topics' and '' or 'nowrap'">
+<ul class="nowrap">
   <li><a href="../modules/Globals.html">Globals</a></li>
 </ul>
 
@@ -135,21 +137,13 @@
 	<td class="name" nowrap><a href="#TCPOption:new_mpcapable">TCPOption:new_mpcapable ([the])</a></td>
 	<td class="summary">Create a new MPTCPCapable Option</td>
 	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#TCPOption:new_edorequest">TCPOption:new_edorequest ()</a></td>
-	<td class="summary">Create a new EDORequest Option</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#TCPOption:new_edo">TCPOption:new_edo ()</a></td>
-	<td class="summary">Create a new EDO Option</td>
-	</tr>
 </table>
 
 <br/>
 <br/>
 
 
-    <h2><a name="Tables"></a>Tables</h2>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
@@ -168,14 +162,14 @@
 
 
         </li>
-        <li><span class="parameter">class</span>
+        <li><span class="parameter">length</span>
             <span class="types"><span class="type">num</span></span>
 
 
 
         </li>
         <li><span class="parameter">data</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          opaque list of bytes
         </li>
     </ul>
@@ -262,7 +256,7 @@
 
 </dd>
 </dl>
-    <h2><a name="Methods"></a>Methods</h2>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
@@ -276,7 +270,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          see <a href="../classes/TCPOption.html#TCPOption.new_args">new_args</a>
          (<em>optional</em>)
         </li>
@@ -329,7 +323,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">data</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
 
 
 
@@ -418,7 +412,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">a</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          list of pairs, either grouped in subtables or in one single flat table
         </li>
     </ul>
@@ -437,7 +431,7 @@
     <h3>Usage:</h3>
     <ul>
         <pre class="example">l = TCPOption:new_sack{<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>} <span class="comment">-- Will create a SACK option with pairs (1,2) and (3,4)
-</span> l = TCPOption:new_sack{{<span class="number">1</span>, <span class="number">2</span>}, {<span class="number">3</span>, <span class="number">4</span>}} -- Equivalent to the above</pre>
+</span> l = TCPOption:new_sack{{<span class="number">1</span>, <span class="number">2</span>}, {<span class="number">3</span>, <span class="number">4</span>}} <span class="comment">-- Equivalent to the above</span></pre>
     </ul>
 
 </dd>
@@ -510,7 +504,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">the</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          MPJoin options, see <a href="../classes/TCPOption.html#TCPOption.MPJoin_args">MPJoin_args</a>
          (<em>optional</em>)
         </li>
@@ -540,55 +534,11 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">the</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          MPCapable options, see <a href="../classes/TCPOption.html#TCPOption.MPCapable_args">MPCapable_args</a>
          (<em>optional</em>)
         </li>
     </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "TCPOption:new_edorequest"></a>
-    <strong>TCPOption:new_edorequest ()</strong>
-    </dt>
-    <dd>
-    Create a new EDORequest Option
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/TCPOption.html#">TCPOption</a></span>
-
-
-
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "TCPOption:new_edo"></a>
-    <strong>TCPOption:new_edo ()</strong>
-    </dt>
-    <dd>
-    Create a new EDO Option
-
-
 
     <h3>Returns:</h3>
     <ol>
@@ -609,8 +559,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-05-04 17:26:47 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2017-10-04 11:48:45 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
