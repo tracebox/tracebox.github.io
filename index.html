@@ -64,7 +64,7 @@ Gregory Detal, Benjamin Hesmans, Olivier Bonaventure, Yves Vanaubel and Benoit D
 <h3>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h3>
 
-<p>Tracebox is available in <a href="https://hub.docker.com/r/matttbe/tracebox">Docker Hub</a> and can be used like that:</p>
+<p>Tracebox is available in <a href="https://hub.docker.com/r/matttbe/tracebox">Docker Hub</a>. Please note that by default, when used in Docker, Tracebox will be executed from a net namespace behind a NAT. It is possible to change this behaviour but in other words, this will add one entry at the beginning of the list, most likely with the IP <code>172.17.0.1</code> set on <code>docker0</code> interface on the host. Tracebox in Docker can be executed like that:</p>
 
 <pre><code>$ docker run -it --rm matttbe/tracebox:latest -h
 $ docker run -it --rm -v "${PWD}:${PWD}" -w "${PWD}" matttbe/tracebox:latest -f my_capture.pcap -p 'IP/tcp{dst=80}/MPCAPABLE/raw("12345678901234567890")' www.multipath-tcp.org
